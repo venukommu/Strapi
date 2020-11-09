@@ -1,2 +1,3 @@
-# Strapi
-A Strapi template to create Strapi projects pre-configured for e-commerce apps.
+# Strapi application
+
+A quick description of your strapi application
