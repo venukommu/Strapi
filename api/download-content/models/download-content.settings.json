@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "download_contents",
+  "info": {
+    "name": "Download Content"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
