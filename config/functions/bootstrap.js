@@ -5,7 +5,8 @@ const path = require("path");
 
 const {
   categories,
-  products
+  products,
+  force
 } = require("../../data/data");
 
 const findPublicRole = async () => {
