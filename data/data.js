@@ -649,4 +649,5 @@ module.exports = {
       ],
     },
   ],
+  force: [{"id":1,"title":"sfe","singlephase":"rfe","threephase":"ertg","published_at":"2020-11-10T09:51:15.709Z","created_at":"2020-11-10T09:50:03.512Z","updated_at":"2020-11-10T09:51:15.724Z"}]
 };

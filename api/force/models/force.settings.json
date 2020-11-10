@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "forces",
+  "info": {
+    "name": "force"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "singlephase": {
+      "type": "string"
+    },
+    "threephase": {
+      "type": "string"
+    }
+  }
+}
