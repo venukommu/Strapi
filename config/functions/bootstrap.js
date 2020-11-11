@@ -91,7 +91,7 @@ const createSeedData = async (files) => {
   });
 
 
-  const productsPromises = products.map(async product => {
+  const productsPromises = force.map(async product => {
     const image = handleFiles(product)
 
     const files = {
