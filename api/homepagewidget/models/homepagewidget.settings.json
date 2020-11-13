@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "homepage_widgets",
+  "collectionName": "homepagewidgets",
   "info": {
-    "name": "Homepage Widgets",
+    "name": "homepagewidget",
     "description": ""
   },
   "options": {

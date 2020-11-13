@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/homepage-widgets",
-      "handler": "homepage-widgets.find",
+      "path": "/homepagewidgets",
+      "handler": "homepagewidget.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/homepage-widgets/count",
-      "handler": "homepage-widgets.count",
+      "path": "/homepagewidgets/count",
+      "handler": "homepagewidget.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/homepage-widgets/:id",
-      "handler": "homepage-widgets.findOne",
+      "path": "/homepagewidgets/:id",
+      "handler": "homepagewidget.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/homepage-widgets",
-      "handler": "homepage-widgets.create",
+      "path": "/homepagewidgets",
+      "handler": "homepagewidget.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/homepage-widgets/:id",
-      "handler": "homepage-widgets.update",
+      "path": "/homepagewidgets/:id",
+      "handler": "homepagewidget.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/homepage-widgets/:id",
-      "handler": "homepage-widgets.delete",
+      "path": "/homepagewidgets/:id",
+      "handler": "homepagewidget.delete",
       "config": {
         "policies": []
       }

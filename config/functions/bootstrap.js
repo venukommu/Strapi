@@ -6,9 +6,11 @@ const path = require("path");
 const {
   categories,
   products,
+  homepagewidgets,
   force
 } = require("../../data/data");
 
+console.log(homepagewidgets);
 const findPublicRole = async () => {
   const result = await strapi
     .query("role", "users-permissions")
@@ -90,7 +92,14 @@ const createSeedData = async (files) => {
     });
   });
 
-
+  const homepagewidgetsPromises = homepagewidgets.map(({
+    ...rest
+  }) => {
+    return strapi.services.homepagewidget.create({
+      ...rest
+    });
+  });
+  
   const productsPromises = products.map(async product => {
     const image = handleFiles(product)
 
@@ -113,6 +122,7 @@ const createSeedData = async (files) => {
   });
 
   await Promise.all(categoriesPromises);
+  await Promise.all(homepagewidgetsPromises);
   await Promise.all(productsPromises);
 };
 

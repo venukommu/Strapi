@@ -649,7 +649,8 @@ module.exports = {
       ],
     },
   ],
-  force:[{
+  force:[
+    {
     id: 1,
     title: "sfe",
     singlephase: "rfe",
@@ -657,5 +658,39 @@ module.exports = {
     published_at: "2020-11-10T13:04:35.186Z",
     created_at: "2020-11-10T09:50:03.512Z",
     updated_at: "2020-11-10T13:04:35.201Z"
-}],
+    },
+  ],
+  homepagewidgets :[
+    {
+      id: 1,
+      title: "ABOUT COMPANY",
+      description: "ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective energy saving technology into our ENPOSS system.",
+      classname: "primary",
+      iconname: "ni ni-check-bold",
+      published_at: "2020-11-09T05:49:26.204Z",
+      created_at: "2020-11-09T05:45:18.021Z",
+      updated_at: "2020-11-09T05:49:26.227Z"
+    },
+    {
+      id :2,
+      title: "PRODUCTS & SERVICES",
+      description: "Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance, increase their population.",
+      classname: "warning",
+      iconname: "fa fa-product-hunt",
+      published_at: "2020-11-09T05:49:39.217Z", 
+      created_at : "2020-11-09T05:46:21.407Z",
+      updated_at: "2020-11-09T05:49:39.247Z"
+    },
+    {
+      id: 3,
+      title: "FORCE SYSTEM",
+      description: "Single-phase power simultaneously changes the supply voltage of an AC power by a system and it is also known as “residential voltage”.",
+      classname: "success",
+      iconname: "fa fa-plug",
+      published_at: "2020-11-09T05:49:33.028Z",
+      created_at: "2020-11-09T05:48:31.412Z",
+      updated_at: "2020-11-09T05:49:33.047Z"
+    
+    },
+    ],
 };
