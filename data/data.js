@@ -663,7 +663,7 @@ module.exports = {
   homepagewidgets :[
     {
       id: 1,
-      title: "ABOUT COMPANY",
+      Title: "ABOUT COMPANY",
       description: "ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective energy saving technology into our ENPOSS system.",
       classname: "primary",
       iconname: "ni ni-check-bold",
@@ -673,7 +673,7 @@ module.exports = {
     },
     {
       id :2,
-      title: "PRODUCTS & SERVICES",
+      Title: "PRODUCTS & SERVICES",
       description: "Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance, increase their population.",
       classname: "warning",
       iconname: "fa fa-product-hunt",
@@ -683,7 +683,7 @@ module.exports = {
     },
     {
       id: 3,
-      title: "FORCE SYSTEM",
+      Title: "FORCE SYSTEM",
       description: "Single-phase power simultaneously changes the supply voltage of an AC power by a system and it is also known as “residential voltage”.",
       classname: "success",
       iconname: "fa fa-plug",

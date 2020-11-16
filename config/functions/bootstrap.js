@@ -10,7 +10,7 @@ const {
   force
 } = require("../../data/data");
 
-console.log(homepagewidgets);
+//console.log(homepagewidgets);
 const findPublicRole = async () => {
   const result = await strapi
     .query("role", "users-permissions")
@@ -92,13 +92,13 @@ const createSeedData = async (files) => {
     });
   });
 
-  const homepagewidgetsPromises = homepagewidgets.map(({
+  /*const homepagewidgetsPromises = homepagewidgets.map(({
     ...rest
   }) => {
     return strapi.services.homepagewidget.create({
       ...rest
     });
-  });
+  });*/
   
   const productsPromises = products.map(async product => {
     const image = handleFiles(product)
@@ -122,11 +122,23 @@ const createSeedData = async (files) => {
   });
 
   await Promise.all(categoriesPromises);
-  await Promise.all(homepagewidgetsPromises);
+  //await Promise.all(homepagewidgetsPromises);
   await Promise.all(productsPromises);
 };
 
+const widgets = async () => {
+  const homepagewidgetsPromises = homepagewidgets.map(async homepagewidget => {
+    try {
+      await strapi.query("homepagewidget").create(homepagewidget);
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+  await Promise.all(homepagewidgetsPromises);
+};
+
 module.exports = async () => {
+  
   const shouldSetDefaultPermissions = await isFirstRun();
   if (shouldSetDefaultPermissions) {
     try {
@@ -134,6 +146,7 @@ module.exports = async () => {
       const files = fs.readdirSync(`./data/uploads`);
       await setDefaultPermissions();
       await createSeedData(files);
+      await widgets();
       console.log("Ready to go");
     } catch (e) {
       console.log(e);
