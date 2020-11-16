@@ -6,8 +6,7 @@ const path = require("path");
 const {
   categories,
   products,
-  homepagewidgets,
-  force
+  homepagewidgets
 } = require("../../data/data");
 
 //console.log(homepagewidgets);
