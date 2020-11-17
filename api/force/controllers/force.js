@@ -19,7 +19,7 @@ module.exports = {
     } else {
       entities = await strapi.services.force.find(ctx.query);
     }
-
-    return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.force }));
+    return sanitizeEntity(entities, { model: strapi.models.force });
+    //return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.force }));
   },
 };

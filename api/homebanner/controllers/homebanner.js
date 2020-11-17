@@ -19,7 +19,7 @@ module.exports = {
     } else {
       entities = await strapi.services.homebanner.find(ctx.query);
     }
-
-    return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.homebanner }));
+    return sanitizeEntity(entities, { model: strapi.models.homebanner });
+    //return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.homebanner }));
   },
 };

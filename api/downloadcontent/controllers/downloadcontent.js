@@ -19,7 +19,7 @@ module.exports = {
     } else {
       entities = await strapi.services.downloadcontent.find(ctx.query);
     }
-
-    return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.downloadcontent }));
+    return sanitizeEntity(entities, { model: strapi.models.downloadcontent });
+    //return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.downloadcontent }));
   },
 };

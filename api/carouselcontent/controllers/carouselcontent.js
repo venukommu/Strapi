@@ -12,7 +12,7 @@ module.exports = {
         } else {
           entities = await strapi.services.carouselcontent.find(ctx.query);
         }
-    
-        return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.carouselcontent }));
+        return sanitizeEntity(entities, { model: strapi.models.carouselcontent });
+        //return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.carouselcontent }));
       },
 };
