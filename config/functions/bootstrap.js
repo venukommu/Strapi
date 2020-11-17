@@ -176,8 +176,19 @@ const featurescontentdata = async () => {
 
 const banner = async () => {
   const homebannerPromises = homebanner.map(async homebanner => {
-    try {
-      await strapi.query("homebanner").create(homebanner);
+    const bannerimage = handleFiles(homebanner)
+
+    const files = {
+      bannerimage
+    };
+     try {
+      const entry = await strapi.query("homebanner").create(homebanner);
+
+      if (files) {
+        await strapi.entityService.uploadFiles(entry, files, {
+          model: 'homebanner'
+        });
+      }
     } catch (e) {
       console.log(e);
     }  
