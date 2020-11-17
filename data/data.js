@@ -693,4 +693,23 @@ module.exports = {
       bannerimage: null
     },
   ],
+  carouselcontent: [
+    {
+      id: 1,
+      Title: "International Leading Technology Independent Research And Development Patent",
+      description: "Power Quality emprovement system Quality Improvement System transforms the corporate power environment to help companies save energy.",
+    },
+  ],
+  features: [
+    {
+      id:1,
+      Title: "Awesome Features",
+      description: "Energy Optimizer helps enterprises save energy and reduce emissions. 5 tons of carbon dioxide emmited per 10,000 KGH of power generation. 1 million KWH / month.Reduce emissions of 420 tons of carbon dioxide per month.",
+      item1: "Enposs",
+      item2: "Force System",
+      item3: "Super friendly support team",
+      LoginButton: "LOGIN",
+      RegisterButton: "REGISTER",
+    },
+  ],
 };

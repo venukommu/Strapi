@@ -9,6 +9,8 @@ const {
   homepagewidgets,
   force,
   homebanner,
+  carouselcontent,
+  features,
 } = require("../../data/data");
 
 //console.log(homepagewidgets);
@@ -149,6 +151,29 @@ const forcedata = async () => {
   await Promise.all(forcePromises);
 };
 
+const carouselcontentdata = async () => {
+  const carouselcontentPromises = carouselcontent.map(async carouselcontent => {
+    try {
+      await strapi.query("carouselcontent").create(carouselcontent);
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+  await Promise.all(carouselcontentPromises);
+};   
+
+const featurescontentdata = async () => {
+  const featurescontentPromises = features.map(async features => {
+    try {
+      await strapi.query("features").create(features);
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+  await Promise.all(featurescontentPromises);
+};   
+
+
 const banner = async () => {
   const homebannerPromises = homebanner.map(async homebanner => {
     try {
@@ -171,6 +196,8 @@ module.exports = async () => {
       await widgets();
       await forcedata();
       await banner();
+      await carouselcontentdata();
+      await featurescontentdata();
       console.log("Ready to go");
     } catch (e) {
       console.log(e);
