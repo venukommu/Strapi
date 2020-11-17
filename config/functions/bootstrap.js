@@ -172,6 +172,8 @@ const featurescontentdata = async () => {
   });
   await Promise.all(featurescontentPromises);
 };   
+
+const bannerData = async (files) => {
 const handleFiles = (data) => {
 
   var file = files.find(x => x.includes(data.id));
@@ -189,8 +191,6 @@ const handleFiles = (data) => {
   };
   return image
 }
-
-const banner = async () => {
   const homebannerPromises = homebanner.map(async homebanner => {
     const bannerimage = handleFiles(homebanner)
 
@@ -210,7 +210,7 @@ const banner = async () => {
     }  
   });
   await Promise.all(homebannerPromises);
-}
+};
 
 module.exports = async () => {
   const shouldSetDefaultPermissions = await isFirstRun();
@@ -222,7 +222,7 @@ module.exports = async () => {
       await createSeedData(files);
       await widgets();
       await forcedata();
-      await banner();
+      await bannerData();
       await carouselcontentdata();
       await featurescontentdata();
       console.log("Ready to go");
