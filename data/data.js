@@ -713,4 +713,14 @@ module.exports = {
       RegisterButton: "REGISTER"
     }
   ],
+  ourcustomers: [
+    {
+      id: 1,
+      Title: "Our customers",
+      description: "Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance, increase their population, reduces leakage and current driven harmonic distortion.Also it reduces power loss and improves operating efficiency of motors, chillers, HVAC equipment, Solar system and much more.We offer the installation and maintenance service for the purchase or lease our force system upon the customer acceptanceby the confirmation of result after 90 free trial base installation at the actual site.",
+      imagetitle: "FORCE System",
+      imagedescription: "Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance, increase their population, and reduces leakage.",
+      image: null
+    }
+  ],
 };

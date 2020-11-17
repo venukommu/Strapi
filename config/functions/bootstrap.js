@@ -11,6 +11,7 @@ const {
   homebanner,
   carouselcontent,
   features,
+  ourcustomers,
 } = require("../../data/data");
 
 //console.log(homepagewidgets);
@@ -212,6 +213,16 @@ const handleFiles = (data) => {
   await Promise.all(homebannerPromises);
 };
 
+const customersContentData = async () => {
+  const customersDataPromises = ourcustomers.map(async ourcustomers => {
+    try {
+      await strapi.query("ourcustomers").create(ourcustomers);
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+  await Promise.all(customersDataPromises);
+};   
 module.exports = async () => {
   const shouldSetDefaultPermissions = await isFirstRun();
   if (shouldSetDefaultPermissions) {
@@ -225,6 +236,7 @@ module.exports = async () => {
       //await bannerData();
       await carouselcontentdata();
       await featurescontentdata();
+      await customersContentData();
       console.log("Ready to go");
     } catch (e) {
       console.log(e);
