@@ -655,34 +655,25 @@ module.exports = {
       Title: "ABOUT COMPANY",
       description: "ENPOSS Inc. was started in Year 2005 with the express intent to bring cost effective energy saving technology into our ENPOSS system.",
       classname: "primary",
-      iconname: "ni ni-check-bold",
-      published_at: "2020-11-09T05:49:26.204Z",
-      created_at: "2020-11-09T05:45:18.021Z",
-      updated_at: "2020-11-09T05:49:26.227Z"
+      iconname: "ni ni-check-bold"
     },
     {
       id :2,
       Title: "PRODUCTS & SERVICES",
       description: "Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance, increase their population.",
       classname: "warning",
-      iconname: "fa fa-product-hunt",
-      published_at: "2020-11-09T05:49:39.217Z", 
-      created_at : "2020-11-09T05:46:21.407Z",
-      updated_at: "2020-11-09T05:49:39.247Z"
+      iconname: "fa fa-product-hunt"
     },
     {
       id: 3,
       Title: "FORCE SYSTEM",
       description: "Single-phase power simultaneously changes the supply voltage of an AC power by a system and it is also known as “residential voltage”.",
       classname: "success",
-      iconname: "fa fa-plug",
-      published_at: "2020-11-09T05:49:33.028Z",
-      created_at: "2020-11-09T05:48:31.412Z",
-      updated_at: "2020-11-09T05:49:33.047Z"
-    
+      iconname: "fa fa-plug"    
     },
-    ],
-    force: [{
+  ],
+  force: [
+    {
       id: 1,
       title: "Force System",
       singlephasetitle: "A Single Phase",
@@ -690,5 +681,16 @@ module.exports = {
       singlephasedesc: "Single-phase power simultaneously changes the supply voltage of an AC power by a system.",
       threephasedesc:  "Three-phase power can be defined as the common method of alternating current power generation, transmission, and distribution.",
       image: null
-    }]
+    }
+  ],
+  homebanner: [
+    {
+      id: 1,
+      Title: "ENPOSS Inc",
+      description: "ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and Support to our customers in North America, Central America, and South America. ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct sales, partners, representatives, dealers, and distributors.",
+      forcesystembutton: "FORCE SYSTEM", 
+      energysavingbutton: "ENERGY SAVING",
+      bannerimage: null
+    },
+  ],
 };

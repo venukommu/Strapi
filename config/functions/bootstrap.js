@@ -8,6 +8,7 @@ const {
   products,
   homepagewidgets,
   force,
+  homebanner,
 } = require("../../data/data");
 
 //console.log(homepagewidgets);
@@ -148,6 +149,17 @@ const forcedata = async () => {
   await Promise.all(forcePromises);
 };
 
+const banner = async () => {
+  const homebannerPromises = homebanner.map(async homebanner => {
+    try {
+      await strapi.query("homebanner").create(homebanner);
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+  await Promise.all(homebannerPromises);
+}
+
 module.exports = async () => {
   const shouldSetDefaultPermissions = await isFirstRun();
   if (shouldSetDefaultPermissions) {
@@ -158,6 +170,7 @@ module.exports = async () => {
       await createSeedData(files);
       await widgets();
       await forcedata();
+      await banner();
       console.log("Ready to go");
     } catch (e) {
       console.log(e);
