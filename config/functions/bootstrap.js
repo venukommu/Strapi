@@ -172,7 +172,23 @@ const featurescontentdata = async () => {
   });
   await Promise.all(featurescontentPromises);
 };   
+const handleFiles = (data) => {
 
+  var file = files.find(x => x.includes(data.id));
+  file = `./data/uploads/${file}`;
+
+  const size = getFilesizeInBytes(file);
+  const array = file.split(".");
+  const ext = array[array.length - 1]
+  const mimeType = `image/.${ext}`;
+  const image = {
+    path: file,
+    name: `${data.id}.${ext}`,
+    size,
+    type: mimeType
+  };
+  return image
+}
 
 const banner = async () => {
   const homebannerPromises = homebanner.map(async homebanner => {

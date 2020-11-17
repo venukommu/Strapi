@@ -691,14 +691,15 @@ module.exports = {
       forcesystembutton: "FORCE SYSTEM", 
       energysavingbutton: "ENERGY SAVING",
       bannerimage: null
-    },
+    }
   ],
   carouselcontent: [
     {
       id: 1,
       Title: "International Leading Technology Independent Research And Development Patent",
       description: "Power Quality emprovement system Quality Improvement System transforms the corporate power environment to help companies save energy.",
-    },
+      carouselimage: null
+    }
   ],
   features: [
     {
@@ -709,7 +710,7 @@ module.exports = {
       item2: "Force System",
       item3: "Super friendly support team",
       LoginButton: "LOGIN",
-      RegisterButton: "REGISTER",
-    },
+      RegisterButton: "REGISTER"
+    }
   ],
 };
