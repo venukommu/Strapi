@@ -222,7 +222,7 @@ module.exports = async () => {
       await createSeedData(files);
       await widgets();
       await forcedata();
-      await bannerData();
+      //await bannerData();
       await carouselcontentdata();
       await featurescontentdata();
       console.log("Ready to go");
