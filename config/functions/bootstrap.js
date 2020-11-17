@@ -6,7 +6,8 @@ const path = require("path");
 const {
   categories,
   products,
-  homepagewidgets
+  homepagewidgets,
+  force,
 } = require("../../data/data");
 
 //console.log(homepagewidgets);
@@ -136,8 +137,18 @@ const widgets = async () => {
   await Promise.all(homepagewidgetsPromises);
 };
 
+const forcedata = async () => {
+  const forcePromises = force.map(async force => {
+    try {
+      await strapi.query("force").create(force);
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+  await Promise.all(forcePromises);
+};
+
 module.exports = async () => {
-  
   const shouldSetDefaultPermissions = await isFirstRun();
   if (shouldSetDefaultPermissions) {
     try {
@@ -146,6 +157,7 @@ module.exports = async () => {
       await setDefaultPermissions();
       await createSeedData(files);
       await widgets();
+      await forcedata();
       console.log("Ready to go");
     } catch (e) {
       console.log(e);
