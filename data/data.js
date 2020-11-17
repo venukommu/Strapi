@@ -682,4 +682,13 @@ module.exports = {
     
     },
     ],
+    force: [{
+      id: 1,
+      title: "Force System",
+      singlephasetitle: "A Single Phase",
+      threephasetitle: "Three Phases",
+      singlephasedesc: "Single-phase power simultaneously changes the supply voltage of an AC power by a system.",
+      threephasedesc:  "Three-phase power can be defined as the common method of alternating current power generation, transmission, and distribution.",
+      image: null
+    }]
 };
