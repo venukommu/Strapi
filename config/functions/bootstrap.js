@@ -176,7 +176,7 @@ const featurescontentdata = async () => {
 const bannerData = async (files) => {
 const handleFiles = (data) => {
 
-  var file = files.find(x => x.includes(data.id));
+  var file = files.find(x => x.includes(data.bannerimage));
   file = `./data/uploads/${file}`;
 
   const size = getFilesizeInBytes(file);
@@ -185,7 +185,7 @@ const handleFiles = (data) => {
   const mimeType = `image/.${ext}`;
   const image = {
     path: file,
-    name: `${data.id}.${ext}`,
+    name: `${data.bannerimage}.${ext}`,
     size,
     type: mimeType
   };
@@ -222,7 +222,7 @@ module.exports = async () => {
       await createSeedData(files);
       await widgets();
       await forcedata();
-      //await bannerData();
+      await bannerData();
       await carouselcontentdata();
       await featurescontentdata();
       console.log("Ready to go");
