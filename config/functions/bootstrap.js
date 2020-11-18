@@ -96,14 +96,6 @@ const createSeedData = async (files) => {
       ...rest
     });
   });
-
-  /*const homepagewidgetsPromises = homepagewidgets.map(({
-    ...rest
-  }) => {
-    return strapi.services.homepagewidget.create({
-      ...rest
-    });
-  });*/
   
   const productsPromises = products.map(async product => {
     const image = handleFiles(product)
@@ -131,21 +123,11 @@ const createSeedData = async (files) => {
   await Promise.all(productsPromises);
 };
 
-const widgets = async () => {
-  const homepagewidgetsPromises = homepagewidgets.map(async homepagewidget => {
-    try {
-      await strapi.query("homepagewidget").create(homepagewidget);
-    } catch (e) {
-      console.log(e);
-    }  
-  });
-  await Promise.all(homepagewidgetsPromises);
-};
+const createContent = async (files) => {
 
-const forcedata = async (files) => {
   const handleFiles = (data) => {
 
-    var file = files.find(x => x.includes(data.id));
+    var file = files.find(x => x.includes(data.slug));
     file = `./data/uploads/${file}`;
   
     const size = getFilesizeInBytes(file);
@@ -154,72 +136,13 @@ const forcedata = async (files) => {
     const mimeType = `image/.${ext}`;
     const image = {
       path: file,
-      name: `${data.id}.${ext}`,
+      name: `${data.slug}.${ext}`,
       size,
       type: mimeType
     };
     return image
   }
-  const forcePromises = force.map(async force => {
-    const image = handleFiles(force)
 
-    const files = {
-      image
-    };
-    try {
-      const entry = await strapi.query("force").create(force);
-      if (files) {
-        await strapi.entityService.uploadFiles(entry, files, {
-          model: 'force'
-        });
-      }
-    } catch (e) {
-      console.log(e);
-    }  
-  });
-  await Promise.all(forcePromises);
-};
-
-const carouselcontentdata = async () => {
-  const carouselcontentPromises = carouselcontent.map(async carouselcontent => {
-    try {
-      await strapi.query("carouselcontent").create(carouselcontent);
-    } catch (e) {
-      console.log(e);
-    }  
-  });
-  await Promise.all(carouselcontentPromises);
-};   
-
-const featurescontentdata = async () => {
-  const featurescontentPromises = features.map(async features => {
-    try {
-      await strapi.query("features").create(features);
-    } catch (e) {
-      console.log(e);
-    }  
-  });
-  await Promise.all(featurescontentPromises);
-};   
-
-const bannerData = async (files) => {
-const handleFiles = (data) => {
-
-  var file = files.find(x => x.includes(data.id));
-  file = `./data/uploads/${file}`;
-
-  const size = getFilesizeInBytes(file);
-  const array = file.split(".");
-  const ext = array[array.length - 1]
-  const mimeType = `image/.${ext}`;
-  const image = {
-    path: file,
-    name: `${data.id}.${ext}`,
-    size,
-    type: mimeType
-  };
-  return image
-}
   const homebannerPromises = homebanner.map(async homebanner => {
     const bannerimage = handleFiles(homebanner)
 
@@ -238,21 +161,77 @@ const handleFiles = (data) => {
       console.log(e);
     }  
   });
-  await Promise.all(homebannerPromises);
-};
-
-const customersContentData = async () => {
-  const customersDataPromises = ourcustomers.map(async ourcustomers => {
+  
+  const homepagewidgetsPromises = homepagewidgets.map(async homepagewidget => {
     try {
-      await strapi.query("ourcustomers").create(ourcustomers);
+      await strapi.query("homepagewidget").create(homepagewidget);
     } catch (e) {
       console.log(e);
     }  
   });
-  await Promise.all(customersDataPromises);
-};   
+  
+  const forcePromises = force.map(async force => {
+    const image = handleFiles(force)
 
-const downloadContentData = async () => {
+    const files = {
+      image
+    };
+    try {
+      const entry = await strapi.query("force").create(force);
+      if (files) {
+        await strapi.entityService.uploadFiles(entry, files, {
+          model: 'force'
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+
+  const carouselcontentPromises = carouselcontent.map(async carouselcontent => {
+    const carouselimage = handleFiles(carouselcontent)
+
+    const files = {
+      carouselimage
+    };
+    try {
+      const entry = await strapi.query("carouselcontent").create(carouselcontent);
+      if (files) {
+        await strapi.entityService.uploadFiles(entry, files, {
+          model: 'carouselcontent'
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+  
+  const featurescontentPromises = features.map(async features => {
+    try {
+      await strapi.query("features").create(features);
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+  
+  const customersDataPromises = ourcustomers.map(async ourcustomers => {
+    const image = handleFiles(ourcustomers)
+
+    const files = {
+      image
+    };
+    try {
+      const entry = await strapi.query("ourcustomers").create(ourcustomers);
+      if (files) {
+        await strapi.entityService.uploadFiles(entry, files, {
+          model: 'ourcustomers'
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+  
   const downloadDataPromises = downloadcontent.map(async downloadcontent => {
     try {
       await strapi.query("downloadcontent").create(downloadcontent);
@@ -260,8 +239,17 @@ const downloadContentData = async () => {
       console.log(e);
     }  
   });
+
+  
+  await Promise.all(homebannerPromises);
+  await Promise.all(homepagewidgetsPromises);
+  await Promise.all(forcePromises);
+  await Promise.all(carouselcontentPromises);
+  await Promise.all(featurescontentPromises);
+  await Promise.all(customersDataPromises);
   await Promise.all(downloadDataPromises);
-};   
+
+};
 
 module.exports = async () => {
   const shouldSetDefaultPermissions = await isFirstRun();
@@ -271,13 +259,7 @@ module.exports = async () => {
       const files = fs.readdirSync(`./data/uploads`);
       await setDefaultPermissions();
       await createSeedData(files);
-      await widgets();
-      await forcedata(files);
-      await bannerData(files);
-      await carouselcontentdata();
-      await featurescontentdata();
-      await customersContentData();
-      await downloadContentData();
+      await createContent(files);
       console.log("Ready to go");
     } catch (e) {
       console.log(e);

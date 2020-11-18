@@ -29,7 +29,12 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": false
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Title",
+      "required": true
     }
   }
 }
