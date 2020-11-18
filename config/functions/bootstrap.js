@@ -143,9 +143,36 @@ const widgets = async () => {
 };
 
 const forcedata = async () => {
+  const handleFiles = (data) => {
+
+    var file = files.find(x => x.includes(data.id));
+    file = `./data/uploads/${file}`;
+  
+    const size = getFilesizeInBytes(file);
+    const array = file.split(".");
+    const ext = array[array.length - 1]
+    const mimeType = `image/.${ext}`;
+    const image = {
+      path: file,
+      name: `${data.id}.${ext}`,
+      size,
+      type: mimeType
+    };
+    return image
+  }
   const forcePromises = force.map(async force => {
+    const image = handleFiles(force)
+
+    const files = {
+      image
+    };
     try {
-      await strapi.query("force").create(force);
+      const entry = await strapi.query("force").create(force);
+      if (files) {
+        await strapi.entityService.uploadFiles(entry, files, {
+          model: 'force'
+        });
+      }
     } catch (e) {
       console.log(e);
     }  
