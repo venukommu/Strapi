@@ -1,0 +1,54 @@
+{
+  "kind": "singleType",
+  "collectionName": "awesomefeatures",
+  "info": {
+    "name": "awesomefeatures",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "item1": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "item2": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "item3": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Title"
+    }
+  }
+}

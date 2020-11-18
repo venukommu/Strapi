@@ -240,6 +240,23 @@ const createContent = async (files) => {
     }  
   });
 
+  const awesomefeaturesPromises = awesomefeatures.map(async awesomefeatures => {
+    const image = handleFiles(awesomefeatures)
+
+    const files = {
+      image
+    };
+    try {
+      const entry = await strapi.query("awesomefeatures").create(awesomefeatures);
+      if (files) {
+        await strapi.entityService.uploadFiles(entry, files, {
+          model: 'awesomefeatures'
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }  
+  });
   
   await Promise.all(homebannerPromises);
   await Promise.all(homepagewidgetsPromises);
@@ -248,6 +265,7 @@ const createContent = async (files) => {
   await Promise.all(featurescontentPromises);
   await Promise.all(customersDataPromises);
   await Promise.all(downloadDataPromises);
+  await Promise.all(awesomefeaturesPromises);
 
 };
 

@@ -732,5 +732,17 @@ module.exports = {
       Title: "Demand for power-saving of enterprises and private are becoming increasingly urgent.",
       description: "Nowadays, the power-saving market is growing fast. Force power-saving device is very convenient and easy to install. With core technology products independently researched and developed, protecting the environment and customer interests are our company's goals, realizing global layout and fulfilling the world's environmental protection obligations."
     }
+  ],
+  awesomefeatures: [
+    {
+      id:1,
+      Title: "Features",
+      slug: "en-bulb",
+      description: "ENPOSS is the manufacturer of FORCE energy savin system. Products are marketed through direct sales, partners, representatives, dealers, and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.",
+      item1: "Enposs",
+      item2: "Force System",
+      item3: "Super friendly support team",
+      image: null
+    }
   ]
 };
