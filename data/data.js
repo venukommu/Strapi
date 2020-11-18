@@ -676,7 +676,7 @@ module.exports = {
     {
       id: 1,
       title: "Force System",
-      slug: "Force System",
+      slug: "u02_0",
       singlephasetitle: "A Single Phase",
       threephasetitle: "Three Phases",
       singlephasedesc: "Single-phase power simultaneously changes the supply voltage of an AC power by a system.",
@@ -688,7 +688,7 @@ module.exports = {
     {
       id: 1,
       Title: "ENPOSS Inc",
-      slug: "ENPOSS Inc",
+      slug: "main1",
       description: "ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and Support to our customers in North America, Central America, and South America. ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct sales, partners, representatives, dealers, and distributors.",
       forcesystembutton: "FORCE SYSTEM", 
       energysavingbutton: "ENERGY SAVING",
@@ -699,7 +699,7 @@ module.exports = {
     {
       id: 1,
       Title: "International Leading Technology Independent Research And Development Patent",
-      slug: "International Leading Technology Independent Research And Development Patent",
+      slug: "carousel-img1",
       description: "Power Quality emprovement system Quality Improvement System transforms the corporate power environment to help companies save energy.",
       carouselimage: null
     }
@@ -720,7 +720,7 @@ module.exports = {
     {
       id: 1,
       Title: "Our customers",
-      slug: "Our customers",
+      slug: "img-1-1200x1000",
       description: "Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance, increase their population, reduces leakage and current driven harmonic distortion.Also it reduces power loss and improves operating efficiency of motors, chillers, HVAC equipment, Solar system and much more.We offer the installation and maintenance service for the purchase or lease our force system upon the customer acceptanceby the confirmation of result after 90 free trial base installation at the actual site.",
       imagetitle: "FORCE System",
       imagedescription: "Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance, increase their population, and reduces leakage.",
