@@ -723,4 +723,10 @@ module.exports = {
       image: null
     }
   ],
+  downloadcontent: [
+    {
+      Title: "Demand for power-saving of enterprises and private are becoming increasingly urgent.",
+      description: "Nowadays, the power-saving market is growing fast. Force power-saving device is very convenient and easy to install. With core technology products independently researched and developed, protecting the environment and customer interests are our company's goals, realizing global layout and fulfilling the world's environmental protection obligations."
+    }
+  ]
 };

@@ -12,6 +12,7 @@ const {
   carouselcontent,
   features,
   ourcustomers,
+  downloadcontent,
 } = require("../../data/data");
 
 //console.log(homepagewidgets);
@@ -223,6 +224,18 @@ const customersContentData = async () => {
   });
   await Promise.all(customersDataPromises);
 };   
+
+const downloadContentData = async () => {
+  const downloadDataPromises = downloadcontent.map(async downloadcontent => {
+    try {
+      await strapi.query("downloadcontent").create(downloadcontent);
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+  await Promise.all(downloadDataPromises);
+};   
+
 module.exports = async () => {
   const shouldSetDefaultPermissions = await isFirstRun();
   if (shouldSetDefaultPermissions) {
@@ -237,6 +250,7 @@ module.exports = async () => {
       await carouselcontentdata();
       await featurescontentdata();
       await customersContentData();
+      await downloadContentData();
       console.log("Ready to go");
     } catch (e) {
       console.log(e);
