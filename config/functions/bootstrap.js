@@ -13,6 +13,7 @@ const {
   features,
   ourcustomers,
   downloadcontent,
+  awesomefeatures,
 } = require("../../data/data");
 
 //console.log(homepagewidgets);
