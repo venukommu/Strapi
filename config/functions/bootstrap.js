@@ -142,7 +142,7 @@ const widgets = async () => {
   await Promise.all(homepagewidgetsPromises);
 };
 
-const forcedata = async () => {
+const forcedata = async (files) => {
   const handleFiles = (data) => {
 
     var file = files.find(x => x.includes(data.id));
