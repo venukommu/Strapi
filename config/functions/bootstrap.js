@@ -272,7 +272,7 @@ module.exports = async () => {
       await setDefaultPermissions();
       await createSeedData(files);
       await widgets();
-      await forcedata();
+      await forcedata(files);
       await bannerData(files);
       await carouselcontentdata();
       await featurescontentdata();
