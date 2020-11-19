@@ -143,6 +143,32 @@ const createContent = async (files) => {
     return image
   }
 
+  const handleMultipleFiles = (data) => {
+    var images = []; 
+    if (data.names) {
+      data.names.forEach(obj => {
+        Object.entries(obj).forEach(([key, value]) => { 
+          var file = files.find(x => x.includes(value));
+          file = `./data/uploads/${file}`;
+      
+          const size = getFilesizeInBytes(file);
+          const array = file.split(".");
+          const ext = array[array.length - 1]
+          const mimeType = `image/.${ext}`;
+          const image = {
+              path: file,
+              name: `${value}.${ext}`,
+              size,
+              type: mimeType
+          };
+          images.push(image);
+          
+        });
+      });
+      return images
+    }
+  }
+
   const homebannerPromises = homebanner.map(async homebanner => {
     const bannerimage = handleFiles(homebanner)
 
@@ -176,6 +202,7 @@ const createContent = async (files) => {
     const files = {
       image
     };
+
     try {
       const entry = await strapi.query("force").create(force);
       if (files) {
@@ -187,13 +214,14 @@ const createContent = async (files) => {
       console.log(e);
     }  
   });
-
+  
   const carouselcontentPromises = carouselcontent.map(async carouselcontent => {
-    const carouselimage = handleFiles(carouselcontent)
+    const carouselimage = await handleMultipleFiles(carouselcontent)
 
     const files = {
       carouselimage
     };
+
     try {
       const entry = await strapi.query("carouselcontent").create(carouselcontent);
       if (files) {

@@ -701,7 +701,10 @@ module.exports = {
       Title: "International Leading Technology Independent Research And Development Patent",
       slug: "carousel-img1",
       description: "Power Quality emprovement system Quality Improvement System transforms the corporate power environment to help companies save energy.",
-      carouselimage: null
+      carouselimage: null,
+      names: [
+        {image1: "carousel-img1", image2: "speedo"}
+      ]
     }
   ],
   features: [
