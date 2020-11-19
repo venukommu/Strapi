@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/forceenergysavingsystem",
+      "handler": "forceenergysavingsystem.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/forceenergysavingsystem",
+      "handler": "forceenergysavingsystem.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/forceenergysavingsystem",
+      "handler": "forceenergysavingsystem.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -755,5 +755,47 @@ module.exports = {
       bannerimage: null,
       productimage: null
     }
-  ]
+  ],
+  forcesystem: [
+    {
+      Title: "FORCE SYSTEM",
+      image: null,
+      images: null,
+      names: {
+        image1: "single-phase", image2: "3phase", image3: "u02_3"
+      }
+    }
+  ],
+  portfolio: [
+    {
+      Title: "PROJECT PORTFOLIO",
+      images: null,
+      names: { image1: "A18040103_10004_0", image2: "A18040103_10003_0", image3: "A18040103_10002_0" }
+    }
+  ],
+  forcepilotfinalreport: [
+    {
+      Title: "PROJECT PORTFOLIO",
+      subtitle: "McDonald’s",
+      images: null,
+      names: { image1: "A18040103_10004_0" }
+    }
+  ],
+  forceenergysavingsystem: [
+    {
+      Title: "PROJECT PORTFOLIO",
+      subtitle: "City of Seymour WWTP",
+      images: null,
+      names: { image1: "A18040103_10003_0" }
+    }
+  ],
+  forcepilotreport: [
+    {
+      Title: "PROJECT PORTFOLIO",
+      subtitle: "Blue Ash Recreation Center",
+      images: null,
+      names: { image1: "A18040103_10002_0" }
+    }
+  ],
+
 };
