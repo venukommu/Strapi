@@ -35,6 +35,10 @@
       "type": "uid",
       "targetField": "Title",
       "required": true
+    },
+    "slug1": {
+      "type": "uid",
+      "targetField": "Title"
     }
   }
 }
