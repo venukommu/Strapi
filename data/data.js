@@ -745,5 +745,13 @@ module.exports = {
       item3: "Super friendly support team",
       image: null
     }
+  ],
+  aboutcompany: [
+    {
+      title:"About Company ",
+      description: "ENPOSS Inc. was started in YR 2005 with the express intent to bring cost effective energy saving technology into our ENPOSS system and sold all different size of system to worldwide market including USA, China, Russia, Vietnam, Japan, Malaysia, Brazil and many other countries. ENPOSS is continuously building strong business relations with diverse global energy saving industries. We strive to be effective, efficient, while delivering integrity in everything we do. We are excited to be in an industry where we can help cut electric energy consumption.",
+      bannerimage: null,
+      productimage: null
+    }
   ]
 };

@@ -14,9 +14,9 @@ const {
   ourcustomers,
   downloadcontent,
   awesomefeatures,
+  aboutcompany,
 } = require("../../data/data");
 
-//console.log(homepagewidgets);
 const findPublicRole = async () => {
   const result = await strapi
     .query("role", "users-permissions")
@@ -120,7 +120,6 @@ const createSeedData = async (files) => {
   });
 
   await Promise.all(categoriesPromises);
-  //await Promise.all(homepagewidgetsPromises);
   await Promise.all(productsPromises);
 };
 
@@ -258,6 +257,14 @@ const createContent = async (files) => {
       console.log(e);
     }  
   });
+
+  const aboutCompanyPromises = aboutcompany.map(async aboutcompany => {
+    try {
+      await strapi.query("aboutcompany").create(aboutcompany);
+    } catch (e) {
+      console.log(e);
+    }  
+  });
   
   await Promise.all(homebannerPromises);
   await Promise.all(homepagewidgetsPromises);
@@ -267,6 +274,7 @@ const createContent = async (files) => {
   await Promise.all(customersDataPromises);
   await Promise.all(downloadDataPromises);
   await Promise.all(awesomefeaturesPromises);
+  await Promise.all(aboutCompanyPromises);
 
 };
 
