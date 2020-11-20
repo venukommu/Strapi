@@ -674,7 +674,6 @@ module.exports = {
   ],
   force: [
     {
-      id: 1,
       title: "Force System",
       slug: "u02_0",
       singlephasetitle: "A Single Phase",
@@ -686,7 +685,6 @@ module.exports = {
   ],
   homebanner: [
     {
-      id: 1,
       Title: "ENPOSS Inc",
       slug: "main1",
       description: "ENPOSS AMERICA is a U.S. corporation, created to provide energy saving Solutions and Support to our customers in North America, Central America, and South America. ENPOSS is the manufacturer of FORCE energy saving system. Products are marketed through direct sales, partners, representatives, dealers, and distributors.",
@@ -697,7 +695,6 @@ module.exports = {
   ],
   carouselcontent: [
     {
-      id: 1,
       Title: "International Leading Technology Independent Research And Development Patent",
       slug: "carousel-img1",
       description: "Power Quality emprovement system Quality Improvement System transforms the corporate power environment to help companies save energy.",
@@ -709,7 +706,6 @@ module.exports = {
   ],
   features: [
     {
-      id:1,
       Title: "Awesome Features",
       description: "Energy Optimizer helps enterprises save energy and reduce emissions. 5 tons of carbon dioxide emmited per 10,000 KGH of power generation. 1 million KWH / month.Reduce emissions of 420 tons of carbon dioxide per month.",
       item1: "Enposs",
@@ -721,7 +717,6 @@ module.exports = {
   ],
   ourcustomers: [
     {
-      id: 1,
       Title: "Our customers",
       slug: "img-1-1200x1000",
       description: "Our Force system is made of non-mechanical mineral based material and force electrons restore electron balance, increase their population, reduces leakage and current driven harmonic distortion.Also it reduces power loss and improves operating efficiency of motors, chillers, HVAC equipment, Solar system and much more.We offer the installation and maintenance service for the purchase or lease our force system upon the customer acceptanceby the confirmation of result after 90 free trial base installation at the actual site.",
@@ -738,7 +733,6 @@ module.exports = {
   ],
   awesomefeatures: [
     {
-      id:1,
       Title: "Features",
       slug: "en_bulb",
       description: "ENPOSS is the manufacturer of FORCE energy savin system. Products are marketed through direct sales, partners, representatives, dealers, and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.",
@@ -800,5 +794,36 @@ module.exports = {
       names: [{ image1: "A18040103_10002_0", image2: "A18040103_10002_1", image3: "A18040103_10002_2", image4: "A18040103_10002_3", image5: "A18040103_10002_4", image6: "A18040103_10002_5", image7: "A18040103_10002_6" }]
     }
   ],
-
+  downloads: [
+    {
+      id: 1,
+      Title: "1.Certificate",
+      image: null,
+      names: [{ image1: "u03_1-1", image2: "u03_1-2"}]
+    },
+    {
+      id :2,
+      Title: "2.Patent",
+      image: null,
+      names: [{ image1: "u03_2-1" }]
+    },
+    {
+      id: 3,
+      Title: "3.Comparative Report",
+      image: null, 
+      names: [{ image1: "u03_3-1" }] 
+    },
+    {
+      id: 4,
+      Title: "4.Installation Method",
+      image: null,
+      names: [{ image1: "u03_4-1" }]
+    },
+    {
+      id :5,
+      Title: "5.Power Saving Device Mechanism",
+      image: null,
+      names: [{ image1: "u03_5-1", image2: "u03_5-2", image3: "u03_5-3", image4: "u03_5-4", image5: "u03_5-5", image6: "u03_5-6" }]
+    }
+  ]
 };
