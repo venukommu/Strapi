@@ -753,24 +753,27 @@ module.exports = {
       title:"About Company ",
       description: "ENPOSS Inc. was started in YR 2005 with the express intent to bring cost effective energy saving technology into our ENPOSS system and sold all different size of system to worldwide market including USA, China, Russia, Vietnam, Japan, Malaysia, Brazil and many other countries. ENPOSS is continuously building strong business relations with diverse global energy saving industries. We strive to be effective, efficient, while delivering integrity in everything we do. We are excited to be in an industry where we can help cut electric energy consumption.",
       bannerimage: null,
-      productimage: null
+      slug: "sky",
+      productimage: null,
+      names: [{ image1: "u01_1" }]
     }
   ],
   forcesystem: [
     {
       Title: "FORCE SYSTEM",
       image: null,
+      slug: "u02_00",
       images: null,
-      names: {
+      names: [{
         image1: "single-phase", image2: "3phase", image3: "u02_3"
-      }
+      }]
     }
   ],
   portfolio: [
     {
       Title: "PROJECT PORTFOLIO",
       images: null,
-      names: { image1: "A18040103_10004_0", image2: "A18040103_10003_0", image3: "A18040103_10002_0" }
+      names: [{ image1: "A18040103_10004_0", image2: "A18040103_10003_0", image3: "A18040103_10002_0" }]
     }
   ],
   forcepilotfinalreport: [
@@ -778,7 +781,7 @@ module.exports = {
       Title: "PROJECT PORTFOLIO",
       subtitle: "McDonald’s",
       images: null,
-      names: { image1: "A18040103_10004_0" }
+      names: [{ image1: "A18040103_10004_0", image2: "A18040103_10004_1", image3: "A18040103_10004_2", image4: "A18040103_10004_3", image5: "A18040103_10004_4", image6: "A18040103_10004_5", image7: "A18040103_10004_6" }]
     }
   ],
   forceenergysavingsystem: [
@@ -786,7 +789,7 @@ module.exports = {
       Title: "PROJECT PORTFOLIO",
       subtitle: "City of Seymour WWTP",
       images: null,
-      names: { image1: "A18040103_10003_0" }
+      names: [{ image1: "A18040103_10003_0", image2: "A18040103_10003_1", image3: "A18040103_10003_2", image4: "A18040103_10003_3", image5: "A18040103_10003_4", image6: "A18040103_10003_5", image7: "A18040103_10003_6" }]
     }
   ],
   forcepilotreport: [
@@ -794,7 +797,7 @@ module.exports = {
       Title: "PROJECT PORTFOLIO",
       subtitle: "Blue Ash Recreation Center",
       images: null,
-      names: { image1: "A18040103_10002_0" }
+      names: [{ image1: "A18040103_10002_0", image2: "A18040103_10002_1", image3: "A18040103_10002_2", image4: "A18040103_10002_3", image5: "A18040103_10002_4", image6: "A18040103_10002_5", image7: "A18040103_10002_6" }]
     }
   ],
 

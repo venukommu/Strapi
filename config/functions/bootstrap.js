@@ -15,6 +15,11 @@ const {
   downloadcontent,
   awesomefeatures,
   aboutcompany,
+  forcesystem,
+  portfolio,
+  forcepilotfinalreport,
+  forceenergysavingsystem,
+  forcepilotreport
 } = require("../../data/data");
 
 const findPublicRole = async () => {
@@ -287,13 +292,121 @@ const createContent = async (files) => {
   });
 
   const aboutCompanyPromises = aboutcompany.map(async aboutcompany => {
+    const bannerimage = handleFiles(aboutcompany)
+    const productimage = await handleMultipleFiles(aboutcompany)
+
+    const files = {
+      bannerimage,
+      productimage
+    };
     try {
-      await strapi.query("aboutcompany").create(aboutcompany);
+      const entry = await strapi.query("aboutcompany").create(aboutcompany);
+      if (files) {
+        await strapi.entityService.uploadFiles(entry, files, {
+          model: 'aboutcompany'
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+
+  const forcesystemPromises = forcesystem.map(async forcesystem => {
+    const image = handleFiles(forcesystem)
+    const images = await handleMultipleFiles(forcesystem)
+
+    const files = {
+      image,
+      images
+    };
+
+    try {
+      const entry = await strapi.query("forcesystem").create(forcesystem);
+      if (files) {
+        await strapi.entityService.uploadFiles(entry, files, {
+          model: 'forcesystem'
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+
+  const portfolioPromises = portfolio.map(async portfolio => {
+    const images = await handleMultipleFiles(portfolio)
+
+    const files = {
+      images
+    };
+
+    try {
+      const entry = await strapi.query("portfolio").create(portfolio);
+      if (files) {
+        await strapi.entityService.uploadFiles(entry, files, {
+          model: 'portfolio'
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+
+  const forcepilotfinalPromises = forcepilotfinalreport.map(async forcepilotfinalreport => {
+    const images = await handleMultipleFiles(forcepilotfinalreport)
+
+    const files = {
+      images
+    };
+
+    try {
+      const entry = await strapi.query("forcepilotfinalreport").create(forcepilotfinalreport);
+      if (files) {
+        await strapi.entityService.uploadFiles(entry, files, {
+          model: 'forcepilotfinalreport'
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+
+  const energysavingsystemPromises = forceenergysavingsystem.map(async forceenergysavingsystem => {
+    const images = await handleMultipleFiles(forceenergysavingsystem)
+
+    const files = {
+      images
+    };
+
+    try {
+      const entry = await strapi.query("forceenergysavingsystem").create(forceenergysavingsystem);
+      if (files) {
+        await strapi.entityService.uploadFiles(entry, files, {
+          model: 'forceenergysavingsystem'
+        });
+      }
     } catch (e) {
       console.log(e);
     }  
   });
   
+  const forcepilotreportPromises = forcepilotreport.map(async forcepilotreport => {
+    const images = await handleMultipleFiles(forcepilotreport)
+
+    const files = {
+      images
+    };
+
+    try {
+      const entry = await strapi.query("forcepilotreport").create(forcepilotreport);
+      if (files) {
+        await strapi.entityService.uploadFiles(entry, files, {
+          model: 'forcepilotreport'
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }  
+  });
   await Promise.all(homebannerPromises);
   await Promise.all(homepagewidgetsPromises);
   await Promise.all(forcePromises);
@@ -303,7 +416,11 @@ const createContent = async (files) => {
   await Promise.all(downloadDataPromises);
   await Promise.all(awesomefeaturesPromises);
   await Promise.all(aboutCompanyPromises);
-
+  await Promise.all(forcesystemPromises);
+  await Promise.all(portfolioPromises);
+  await Promise.all(forcepilotfinalPromises);
+  await Promise.all(energysavingsystemPromises);
+  await Promise.all(forcepilotreportPromises);
 };
 
 module.exports = async () => {
