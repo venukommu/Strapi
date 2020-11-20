@@ -740,7 +740,7 @@ module.exports = {
     {
       id:1,
       Title: "Features",
-      slug: "en-bulb",
+      slug: "en_bulb",
       description: "ENPOSS is the manufacturer of FORCE energy savin system. Products are marketed through direct sales, partners, representatives, dealers, and distributors. ENPOSS America, Inc. is a wholly-owned corporation of ENPOSS Corporation in Korea.",
       item1: "Enposs",
       item2: "Force System",
