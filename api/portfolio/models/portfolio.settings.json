@@ -30,10 +30,6 @@
     "names": {
       "type": "json",
       "required": true
-    },
-    "linknames": {
-      "type": "json",
-      "required": true
     }
   }
 }

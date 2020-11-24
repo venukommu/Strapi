@@ -767,8 +767,7 @@ module.exports = {
     {
       Title: "PROJECT PORTFOLIO",
       images: null,
-      names: [{ image1: "A18040103_10004_0", image2: "A18040103_10003_0", image3: "A18040103_10002_0" }],
-      linknames: {item1: "forcepilotfinalreport", item2: "forceenergysavingsystem", item3: "forcepilotreport" }
+      names: [{ forcepilotfinalreport: "A18040103_10004_0", forceenergysavingsystem: "A18040103_10003_0", forcepilotreport: "A18040103_10002_0" }]
     }
   ],
   forcepilotfinalreport: [
