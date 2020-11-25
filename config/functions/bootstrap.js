@@ -430,7 +430,7 @@ const createContent = async (files) => {
   });
 
   const contactPromises = contactcontent.map(async contactcontent => {
-    const images = await handleFiles(contactcontent)
+    const images = handleFiles(contactcontent)
 
     const files = {
       images

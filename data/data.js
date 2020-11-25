@@ -832,7 +832,7 @@ module.exports = {
       title: "WARRANTY",
       description: "8-year equipment warranty (according to the warranty policy).",
       image: null,
-      slug: "1578730282_1551667336",
+      slug: "1578730282_1551667336"
     },
     {
       id :2,
