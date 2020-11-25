@@ -700,7 +700,7 @@ module.exports = {
       description: "Power Quality emprovement system Quality Improvement System transforms the corporate power environment to help companies save energy.",
       carouselimage: null,
       names: [
-        {image1: "carousel-img1", image2: "speedo"}
+        {image1: "bulb", image2: "speedo"}
       ]
     }
   ],
