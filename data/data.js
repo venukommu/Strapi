@@ -826,27 +826,27 @@ module.exports = {
       names: [{ image1: "u03_5-1", image2: "u03_5-2", image3: "u03_5-3", image4: "u03_5-4", image5: "u03_5-5", image6: "u03_5-6" }]
     }
   ],
-  contact: [
+  contactcontents: [
     {
       id: 1,
       title: "WARRANTY",
       description: "8-year equipment warranty (according to the warranty policy).",
       image: null,
-      names: [{ image1: "1578730282_1551667336"}]
+      slug: "1578730282_1551667336",
     },
     {
       id :2,
       title: "COMMITMENTS",
       description: "Products Imported Directly From Enposs Korea.",
       image: null,
-      names: [{ image1: "commitments" }]
+      slug: "commitments"
     },
     {
       id: 3,
       title: "REPLACE",
       description: "Replace new equipment ( according to the warranty policy)",
       image: null, 
-      names: [{ image1: "1578730282_1551674767" }] 
+      slug: "1578730282_1551674767"
     },
   ]
 };
