@@ -150,9 +150,10 @@ const createContent = async (files) => {
     return image
   }
 
-  const handleMultipleFiles = (data) => { 
+  const handleMultipleFiles = (data) => {
+    var images = []; 
     if (data.names) {
-      const images = data.names.map(obj => {
+      data.names.map(obj => {
         var file = files.find(x => x.includes(obj.image));
         file = `./data/uploads/${file}`;
     
@@ -166,7 +167,8 @@ const createContent = async (files) => {
             size,
             type: mimeType
         };
-      });
+        images.push(image);
+      })
       return images
     }
   }
