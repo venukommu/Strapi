@@ -21,7 +21,7 @@ const {
   forceenergysavingsystem,
   forcepilotreport,
   downloads,
-  contactcontent,
+  contactcontents,
 } = require("../../data/data");
 
 const findPublicRole = async () => {
@@ -429,7 +429,7 @@ const createContent = async (files) => {
     }  
   });
 
-  const contactPromises = contactcontent.map(async contactcontent => {
+  const contactPromises = contactcontents.map(async contactcontent => {
     const images = handleFiles(contactcontent)
 
     const files = {
