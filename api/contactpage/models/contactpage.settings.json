@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "contactpages",
   "info": {
-    "name": "contactpage"
+    "name": "contactpage",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -22,12 +23,12 @@
       "model": "file",
       "via": "related",
       "allowedTypes": [
-        "images",
         "files",
+        "images",
         "videos"
       ],
       "plugin": "upload",
-      "required": false
+      "required": true
     },
     "slug": {
       "type": "uid",
