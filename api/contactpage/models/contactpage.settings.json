@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "contactcontents",
+  "collectionName": "contactpages",
   "info": {
-    "name": "contactcontent",
-    "description": ""
+    "name": "contactpage"
   },
   "options": {
     "increments": true,
@@ -13,13 +12,11 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": true
     },
     "description": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": true
     },
     "image": {
       "model": "file",

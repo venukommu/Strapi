@@ -21,7 +21,7 @@ const {
   forceenergysavingsystem,
   forcepilotreport,
   downloads,
-  contactcontents,
+  contactpages,
 } = require("../../data/data");
 
 const findPublicRole = async () => {
@@ -429,18 +429,18 @@ const createContent = async (files) => {
     }  
   });
 
-  const contactPromises = contactcontents.map(async contactcontent => {
-    const images = handleFiles(contactcontent)
+  const contactPromises = contactpages.map(async contactpage => {
+    const images = handleFiles(contactpage)
 
     const files = {
       images
     };
 
     try {
-      const entry = await strapi.query("contactcontent").create(contactcontent);
+      const entry = await strapi.query("contactpage").create(contactpage);
       if (files) {
         await strapi.entityService.uploadFiles(entry, files, {
-          model: 'contactcontent'
+          model: 'contactpage'
         });
       }
     } catch (e) {
