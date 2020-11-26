@@ -830,7 +830,7 @@ module.exports = {
       title: "WARRANTY",
       description: "8-year equipment warranty (according to the warranty policy).",
       image: null,
-      slug: "1578730282_1551667336"
+      slug: "warranty"
     },
     {
       id :2,
@@ -844,7 +844,7 @@ module.exports = {
       title: "REPLACE",
       description: "Replace new equipment ( according to the warranty policy)",
       image: null, 
-      slug: "1578730282_1551674767"
+      slug: "replace"
     },
   ]
 };
