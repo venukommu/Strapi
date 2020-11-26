@@ -699,9 +699,7 @@ module.exports = {
       slug: "carousel-img1",
       description: "Power Quality emprovement system Quality Improvement System transforms the corporate power environment to help companies save energy.",
       carouselimage: null,
-      names: [
-        {image1: "bulb", image2: "speedo"}
-      ]
+      names: [{id: 1, image: "bulb"}, {id: 2, image: "speedo"}]
     }
   ],
   features: [
@@ -749,7 +747,7 @@ module.exports = {
       bannerimage: null,
       slug: "sky",
       productimage: null,
-      names: [{ image1: "u01_1" }]
+      names: [{id: 1, image: "u01_1" }]
     }
   ],
   forcesystem: [
@@ -758,16 +756,16 @@ module.exports = {
       image: null,
       slug: "u02_00",
       images: null,
-      names: [{
-        image1: "single-phase", image2: "3phase", image3: "u02_3"
-      }]
+      names: [{id: 1, image: "single-phase"}, {id: 2, image: "3phase"}, {id: 3, image: "u02_3"}]
     }
   ],
   portfolio: [
     {
       Title: "PROJECT PORTFOLIO",
       images: null,
-      names: [{ forcepilotfinalreport: "A18040103_10004_0", forceenergysavingsystem: "A18040103_10003_0", forcepilotreport: "A18040103_10002_0" }]
+      names: [{id: 1, image: "A18040103_10004_0", imagename: "forcepilotfinalreport"} ,
+      {id: 2, image:"A18040103_10003_0", imagename: "forceenergysavingsystem"},
+      {id: 3, image: "A18040103_10002_0", imagename: "forcepilotreport" }]
     }
   ],
   forcepilotfinalreport: [
@@ -775,7 +773,7 @@ module.exports = {
       Title: "PROJECT PORTFOLIO",
       subtitle: "McDonald’s",
       images: null,
-      names: [{ image1: "A18040103_10004_0", image2: "A18040103_10004_1", image3: "A18040103_10004_2", image4: "A18040103_10004_3", image5: "A18040103_10004_4", image6: "A18040103_10004_5", image7: "A18040103_10004_6" }]
+      names: [{id: 1, image: "A18040103_10004_0"}, {id: 2, image: "A18040103_10004_1"}, {id: 3, image: "A18040103_10004_2"}, {id: 4, image: "A18040103_10004_3"}, {id: 5, image: "A18040103_10004_4"}, {id: 6, image: "A18040103_10004_5"}, {id: 7, image: "A18040103_10004_6" }]
     }
   ],
   forceenergysavingsystem: [
@@ -783,7 +781,7 @@ module.exports = {
       Title: "PROJECT PORTFOLIO",
       subtitle: "City of Seymour WWTP",
       images: null,
-      names: [{ image1: "A18040103_10003_0", image2: "A18040103_10003_1", image3: "A18040103_10003_2", image4: "A18040103_10003_3", image5: "A18040103_10003_4", image6: "A18040103_10003_5", image7: "A18040103_10003_6" }]
+      names: [{id: 1, image: "A18040103_10003_0"}, {id: 2, image: "A18040103_10003_1"}, {id: 3, image: "A18040103_10003_2"}, {id: 4, image: "A18040103_10003_3"}, {id: 5, image: "A18040103_10003_4"}, {id: 6, image: "A18040103_10003_5"}, {id: 7, image: "A18040103_10003_6" }]
     }
   ],
   forcepilotreport: [
@@ -791,7 +789,7 @@ module.exports = {
       Title: "PROJECT PORTFOLIO",
       subtitle: "Blue Ash Recreation Center",
       images: null,
-      names: [{ image1: "A18040103_10002_0", image2: "A18040103_10002_1", image3: "A18040103_10002_2", image4: "A18040103_10002_3", image5: "A18040103_10002_4", image6: "A18040103_10002_5", image7: "A18040103_10002_6" }]
+      names: [{id: 1, image: "A18040103_10002_0"}, {id: 2, image: "A18040103_10002_1"}, {id: 3, image: "A18040103_10002_2"}, {id: 4, image: "A18040103_10002_3"}, {id: 5, image: "A18040103_10002_4"}, {id: 6, image: "A18040103_10002_5"}, {id: 7, image: "A18040103_10002_6" }]
     }
   ],
   downloads: [
@@ -799,31 +797,31 @@ module.exports = {
       id: 1,
       Title: "1.Certificate",
       image: null,
-      names: [{ image1: "u03_1-1", image2: "u03_1-2"}]
+      names: [{id: 1, image: "u03_1-1"}, {id: 2, image: "u03_1-2"}]
     },
     {
       id :2,
       Title: "2.Patent",
       image: null,
-      names: [{ image1: "u03_2-1" }]
+      names: [{id: 1, image: "u03_2-1" }]
     },
     {
       id: 3,
       Title: "3.Comparative Report",
       image: null, 
-      names: [{ image1: "u03_3-1" }] 
+      names: [{id: 1, image: "u03_3-1" }] 
     },
     {
       id: 4,
       Title: "4.Installation Method",
       image: null,
-      names: [{ image1: "u03_4-1" }]
+      names: [{id: 1, image: "u03_4-1" }]
     },
     {
       id :5,
       Title: "5.Power Saving Device Mechanism",
       image: null,
-      names: [{ image1: "u03_5-1", image2: "u03_5-2", image3: "u03_5-3", image4: "u03_5-4", image5: "u03_5-5", image6: "u03_5-6" }]
+      names: [{id: 1, image: "u03_5-1"}, {id: 2, image: "u03_5-2"}, {id: 3, image: "u03_5-3"}, {id: 4, image: "u03_5-4"}, {id: 5, image: "u03_5-5"}, {id: 6, image: "u03_5-6" }]
     }
   ],
   contactpages: [

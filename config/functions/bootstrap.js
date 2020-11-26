@@ -150,27 +150,22 @@ const createContent = async (files) => {
     return image
   }
 
-  const handleMultipleFiles = (data) => {
-    var images = []; 
+  const handleMultipleFiles = (data) => { 
     if (data.names) {
-      data.names.forEach(obj => {
-        Object.entries(obj).forEach(([key, value]) => { 
-          var file = files.find(x => x.includes(value));
-          file = `./data/uploads/${file}`;
-      
-          const size = getFilesizeInBytes(file);
-          const array = file.split(".");
-          const ext = array[array.length - 1]
-          const mimeType = `image/.${ext}`;
-          const image = {
-              path: file,
-              name: `${value}.${ext}`,
-              size,
-              type: mimeType
-          };
-          images.push(image);
-          
-        });
+      const images = data.names.map(obj => {
+        var file = files.find(x => x.includes(obj.image));
+        file = `./data/uploads/${file}`;
+    
+        const size = getFilesizeInBytes(file);
+        const array = file.split(".");
+        const ext = array[array.length - 1]
+        const mimeType = `image/.${ext}`;
+        const image = {
+            path: file,
+            name: `${obj.image}.${ext}`,
+            size,
+            type: mimeType
+        };
       });
       return images
     }

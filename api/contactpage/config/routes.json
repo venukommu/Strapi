@@ -18,7 +18,7 @@
     },
     {
       "method": "GET",
-      "path": "/contactpages/:id",
+      "path": "/contactpages/:slug",
       "handler": "contactpage.findOne",
       "config": {
         "policies": []
