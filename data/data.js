@@ -797,54 +797,56 @@ module.exports = {
       id: 1,
       Title: "1.Certificate",
       image: null,
-      names: [{id: 1, image: "u03_1-1"}, {id: 2, image: "u03_1-2"}]
+      names: [{id: 1, image: "u03_1-1", imagelabel: "UL Approval Letter"}, {id: 2, image: "u03_1-2", imagelabel: "Certification & Test Report"}]
     },
     {
       id :2,
       Title: "2.Patent",
       image: null,
-      names: [{id: 1, image: "u03_2-1" }]
+      names: [{id: 1, image: "u03_2-1", imagelabel: "US Patent" }]
     },
     {
       id: 3,
       Title: "3.Comparative Report",
       image: null, 
-      names: [{id: 1, image: "u03_3-1" }] 
+      names: [{id: 1, image: "u03_3-1", imagelabel: "Comparative Report" }] 
     },
     {
       id: 4,
       Title: "4.Installation Method",
       image: null,
-      names: [{id: 1, image: "u03_4-1" }]
+      names: [{id: 1, image: "u03_4-1", imagelabel: "Installation Method" }]
     },
     {
       id :5,
       Title: "5.Power Saving Device Mechanism",
       image: null,
-      names: [{id: 1, image: "u03_5-1"}, {id: 2, image: "u03_5-2"}, {id: 3, image: "u03_5-3"}, {id: 4, image: "u03_5-4"}, {id: 5, image: "u03_5-5"}, {id: 6, image: "u03_5-6" }]
+      names: [{id: 1, image: "u03_5-1", imagelabel: "Power Saving Device Mechanism"}, {id: 2, image: "u03_5-2", imagelabel: "Power Saving Device Mechanism"}, {id: 3, image: "u03_5-3", imagelabel: "Power Saving Device Mechanism"}, 
+      {id: 4, image: "u03_5-4", imagelabel: "Power Saving Device Mechanism"}, {id: 5, image: "u03_5-5", imagelabel: "Power Saving Device Mechanism"}, {id: 6, image: "u03_5-6", imagelabel: "Power Saving Device Mechanism" }]
     }
   ],
   contacts: [
     {
       id: 1,
-      Title: "WARRANTY",
+      title: "WARRANTY",
       slug: "warranty",
       description: "8-year equipment warranty (according to the warranty policy).",
-      images: null
+      image: null
     },
     {
-      id: 2,
-      Title: "COMMITMENTS",
+      id :2,
+      title: "COMMITMENTS",
       slug: "commitments",
       description: "Products Imported Directly From Enposs Korea.",
-      images: null
+      image: null
     },
     {
       id: 3,
-      Title: "REPLACE",
+      title: "REPLACE",
       slug: "replace",
       description: "Replace new equipment ( according to the warranty policy)",
-      images: null
+      image: null
     },
   ]
 };
+
