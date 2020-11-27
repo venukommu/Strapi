@@ -21,7 +21,6 @@ const {
   forceenergysavingsystem,
   forcepilotreport,
   downloads,
-  contacts,
 } = require("../../data/data");
 
 const findPublicRole = async () => {
@@ -151,9 +150,8 @@ const createContent = async (files) => {
   }
 
   const handleMultipleFiles = (data) => {
-    var images = []; 
     if (data.names) {
-      data.names.map(obj => {
+      const images = data.names.map(obj => {
         var file = files.find(x => x.includes(obj.image));
         file = `./data/uploads/${file}`;
     
@@ -167,9 +165,9 @@ const createContent = async (files) => {
             size,
             type: mimeType
         };
-        images.push(image);
+        return image;
       })
-      return images
+      return images;
     }
   }
 
@@ -424,27 +422,7 @@ const createContent = async (files) => {
     } catch (e) {
       console.log(e);
     }  
-  });
-
-  const contactPromises = contacts.map(async contacts => {
-    const images = handleFiles(contacts)
-
-    const files = {
-      images
-    };
-
-    try {
-      const entry = await strapi.query("contacts").create(contacts);
-      if (files) {
-        await strapi.entityService.uploadFiles(entry, files, {
-          model: 'contacts'
-        });
-      }
-    } catch (e) {
-      console.log(e);
-    }  
-  });
-  
+  });  
 
   await Promise.all(homebannerPromises);
   await Promise.all(homepagewidgetsPromises);
@@ -461,7 +439,6 @@ const createContent = async (files) => {
   await Promise.all(energysavingsystemPromises);
   await Promise.all(forcepilotreportPromises);
   await Promise.all(downloadPromises);
-  await Promise.all(contactPromises);
 };
 
 module.exports = async () => {
