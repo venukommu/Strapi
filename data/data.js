@@ -824,7 +824,7 @@ module.exports = {
       names: [{id: 1, image: "u03_5-1"}, {id: 2, image: "u03_5-2"}, {id: 3, image: "u03_5-3"}, {id: 4, image: "u03_5-4"}, {id: 5, image: "u03_5-5"}, {id: 6, image: "u03_5-6" }]
     }
   ],
-  contactpages: [
+  contacts: [
     {
       id: 1,
       title: "WARRANTY",
