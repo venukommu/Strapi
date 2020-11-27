@@ -21,7 +21,7 @@ const {
   forceenergysavingsystem,
   forcepilotreport,
   downloads,
-  contactpages,
+ // contactpages,
 } = require("../../data/data");
 
 const findPublicRole = async () => {
@@ -426,7 +426,7 @@ const createContent = async (files) => {
     }  
   });
 
-  const contactPromises = contactpages.map(async contactpage => {
+ /* const contactPromises = contactpages.map(async contactpage => {
     const images = handleFiles(contactpage)
 
     const files = {
@@ -443,7 +443,8 @@ const createContent = async (files) => {
     } catch (e) {
       console.log(e);
     }  
-  });
+  });*/
+  
 
   await Promise.all(homebannerPromises);
   await Promise.all(homepagewidgetsPromises);
@@ -460,7 +461,7 @@ const createContent = async (files) => {
   await Promise.all(energysavingsystemPromises);
   await Promise.all(forcepilotreportPromises);
   await Promise.all(downloadPromises);
-  await Promise.all(contactPromises);
+  //await Promise.all(contactPromises);
 };
 
 module.exports = async () => {
