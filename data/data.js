@@ -833,7 +833,7 @@ module.exports = {
       image: null
     },
     {
-      id :2,
+      id: 2,
       title: "COMMITMENTS",
       slug: "commitments",
       description: "Products Imported Directly From Enposs Korea.",
