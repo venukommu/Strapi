@@ -1,13 +1,12 @@
 {
   "kind": "collectionType",
-  "collectionName": "contact",
+  "collectionName": "contacts",
   "info": {
     "name": "contact"
   },
   "options": {
     "increments": true,
-    "timestamps": true,
-    "draftAndPublish": true
+    "timestamps": true
   },
   "attributes": {
     "Title": {
