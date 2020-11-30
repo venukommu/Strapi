@@ -20,11 +20,11 @@
       "required": true
     },
     "images": {
-      "model": "file",
+      "collection": "file",
       "via": "related",
       "allowedTypes": [
-        "images",
         "files",
+        "images",
         "videos"
       ],
       "plugin": "upload",
