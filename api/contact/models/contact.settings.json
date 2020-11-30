@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "contacts",
   "info": {
-    "name": "contact"
+    "name": "contact",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "Title": {
@@ -31,6 +33,10 @@
     "slug": {
       "type": "uid",
       "targetField": "Title",
+      "required": true
+    },
+    "names": {
+      "type": "json",
       "required": true
     }
   }
