@@ -829,7 +829,7 @@ module.exports = {
     {
       id: 1,
       Title: "WARRANTY",
-      //slug: "warranty",
+      slug: "warranty",
       description: "8-year equipment warranty (according to the warranty policy).",
       image: null,
       names: [{id: 1, image: "warranty" }]
@@ -837,7 +837,7 @@ module.exports = {
     {
       id :2,
       Title: "COMMITMENTS",
-      //slug: "commitments",
+      slug: "commitments",
       description: "Products Imported Directly From Enposs Korea.",
       image: null,
       names: [{id: 2, image: "commitments" }]
@@ -845,7 +845,7 @@ module.exports = {
     {
       id: 3,
       Title: "REPLACE",
-      //slug: "replace",
+      slug: "replace",
       description: "Replace new equipment ( according to the warranty policy)",
       images: null,
       names: [{id: 3, image: "replace" }]
