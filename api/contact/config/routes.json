@@ -18,7 +18,7 @@
     },
     {
       "method": "GET",
-      "path": "/contacts/:id",
+      "path": "/contacts/:slug",
       "handler": "contact.findOne",
       "config": {
         "policies": []
