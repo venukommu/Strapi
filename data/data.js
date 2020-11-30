@@ -828,21 +828,21 @@ module.exports = {
   contacts: [
     {
       id: 1,
-      title: "WARRANTY",
+      Title: "WARRANTY",
       slug: "warranty",
       description: "8-year equipment warranty (according to the warranty policy).",
       image: null
     },
     {
       id :2,
-      title: "COMMITMENTS",
+      Title: "COMMITMENTS",
       slug: "commitments",
       description: "Products Imported Directly From Enposs Korea.",
       image: null
     },
     {
       id: 3,
-      title: "REPLACE",
+      Title: "REPLACE",
       slug: "replace",
       description: "Replace new equipment ( according to the warranty policy)",
       image: null
