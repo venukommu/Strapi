@@ -831,7 +831,7 @@ module.exports = {
       Title: "WARRANTY",
       slug: "warranty",
       description: "8-year equipment warranty (according to the warranty policy).",
-      image: null,
+      images: null,
       names: [{id: 1, image: "warranty" }]
     },
     {
@@ -839,7 +839,7 @@ module.exports = {
       Title: "COMMITMENTS",
       slug: "commitments",
       description: "Products Imported Directly From Enposs Korea.",
-      image: null,
+      images: null,
       names: [{id: 2, image: "commitments" }]
     },
     {

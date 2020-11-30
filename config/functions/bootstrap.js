@@ -136,7 +136,7 @@ const createContent = async (files) => {
 
     var file = files.find(x => x.includes(data.slug));
     file = `./data/uploads/${file}`;
-   console.log("file",file);
+   console.log("handleFiles",file);
     const size = getFilesizeInBytes(file);
     const array = file.split(".");
     const ext = array[array.length - 1]
@@ -155,7 +155,8 @@ const createContent = async (files) => {
       const images = data.names.map(obj => {
         var file = files.find(x => x.includes(obj.image));
         file = `./data/uploads/${file}`;
-    
+        console.log("handleMultipleFiles",file);
+
         const size = getFilesizeInBytes(file);
         const array = file.split(".");
         const ext = array[array.length - 1]
@@ -426,7 +427,7 @@ const createContent = async (files) => {
   });
   
   const contactsPromises = contacts.map(async contact => {
-    const images = handleMultipleFiles(contact)
+    const images = handleFiles(contact)
 
     const files = {
       images
