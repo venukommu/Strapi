@@ -426,10 +426,10 @@ const createContent = async (files) => {
   });
   
   const contactsPromises = contacts.map(async contact => {
-    const image = handleFiles(contact)
+    const images = handleMultipleFiles(contact)
 
     const files = {
-      image
+      images
     };
 
     try {
