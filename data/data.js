@@ -828,22 +828,22 @@ module.exports = {
   contacts: [
     {
       id: 1,
-      Title: "strapi",
-      slug: "strapi",
+      Title: "WARRANTY",
+      slug: "warranty",
       description: "8-year equipment warranty (according to the warranty policy).",
       images: null
     },
     {
       id :2,
-      Title: "angular",
-      slug: "angular",
+      Title: "COMMITMENTS",
+      slug: "commitments",
       description: "Products Imported Directly From Enposs Korea.",
       images: null
     },
     {
       id: 3,
-      Title: "java",
-      slug: "java",
+      Title: "REPLACE",
+      slug: "replace",
       description: "Replace new equipment ( according to the warranty policy)",
       images: null
     },

@@ -136,7 +136,7 @@ const createContent = async (files) => {
 
     var file = files.find(x => x.includes(data.slug));
     file = `./data/uploads/${file}`;
-    console.log("file",file);
+   console.log("file",file);
     const size = getFilesizeInBytes(file);
     const array = file.split(".");
     const ext = array[array.length - 1]
