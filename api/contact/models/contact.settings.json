@@ -34,10 +34,6 @@
       "type": "uid",
       "targetField": "Title",
       "required": true
-    },
-    "names": {
-      "type": "json",
-      "required": true
     }
   }
 }

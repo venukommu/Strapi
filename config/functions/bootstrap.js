@@ -131,12 +131,10 @@ const createSeedData = async (files) => {
 };
 
 const createContent = async (files) => {
-
   const handleFiles = (data) => {
-
     var file = files.find(x => x.includes(data.slug));
     file = `./data/uploads/${file}`;
-   console.log("handleFiles",file);
+    console.log("handleFiles",file);
     const size = getFilesizeInBytes(file);
     const array = file.split(".");
     const ext = array[array.length - 1]
@@ -156,7 +154,6 @@ const createContent = async (files) => {
         var file = files.find(x => x.includes(obj.image));
         file = `./data/uploads/${file}`;
         console.log("handleMultipleFiles",file);
-
         const size = getFilesizeInBytes(file);
         const array = file.split(".");
         const ext = array[array.length - 1]
