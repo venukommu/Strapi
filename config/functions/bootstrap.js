@@ -173,14 +173,12 @@ const createContent = async (files, pdfs) => {
   }
 
   const promisesData = async (images, data, str) => {
-    const files = {
-      images
-    };
+    console.log(str);
      try {
       const entry = await strapi.query(str).create(data);
 
       if (files) {
-        await strapi.entityService.uploadFiles(entry, files, {
+        await strapi.entityService.uploadFiles(entry, images, {
           model: str
         });
       }
@@ -190,7 +188,10 @@ const createContent = async (files, pdfs) => {
   }
   const homebannerPromises = homebanner.map(async homebanner => {
     const bannerimage = handleFiles(homebanner)
-    promisesData(bannerimage, homebanner, 'homebanner')
+    const files = {
+      bannerimage
+    };
+    await promisesData(files, homebanner, "homebanner")
   });
   
   const homepagewidgetsPromises = homepagewidgets.map(async homepagewidget => {
@@ -410,11 +411,11 @@ const createContent = async (files, pdfs) => {
 
   const downloadPromises = downloads.map(async download => {
     const images = await handleMultipleFiles(download)
-    const pdfimg = await handleMultiplepdfs(download)
+    const pdffiles = await handleMultiplepdfs(download)
 
     const files = {
       images,
-      pdfimg
+      pdffiles
     };
 
     try {
