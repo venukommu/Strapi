@@ -130,7 +130,7 @@ const createSeedData = async (files) => {
   await Promise.all(productsPromises);
 };
 
-const createContent = async (files) => {
+const createContent = async (files, pdfs) => {
   const handleFiles = (data) => {
     var file = files.find(x => x.includes(data.slug));
     file = `./data/uploads/${file}`;
@@ -153,7 +153,7 @@ const createContent = async (files) => {
       const images = data.names.map(obj => {
         var file;
         if (obj.pdfimage) {
-          file = files.find(x => x.includes(obj.pdfimage));
+          file = pdfs.find(x => x.includes(obj.pdfimage));
           file = `./data/uploads/pdf-reports/${file}`;
         } else {
           file = files.find(x => x.includes(obj.image));
@@ -474,9 +474,10 @@ module.exports = async () => {
     try {
       console.log("Setting up your starter...");
       const files = fs.readdirSync(`./data/uploads`);
+      const pdfs = fs.readdirSync(`./data/uploads/pdf-reports`);
       await setDefaultPermissions();
       await createSeedData(files);
-      await createContent(files);
+      await createContent(files, pdfs);
       console.log("Ready to go");
     } catch (e) {
       console.log(e);
