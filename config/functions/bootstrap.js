@@ -151,8 +151,14 @@ const createContent = async (files) => {
   const handleMultipleFiles = (data) => {
     if (data.names) {
       const images = data.names.map(obj => {
-        var file = files.find(x => x.includes(obj.image));
-        file = `./data/uploads/${file}`;
+        var file;
+        if (obj.pdfimage) {
+          file = files.find(x => x.includes(obj.pdfimage));
+          file = `./data/uploads/pdf-reports/${file}`;
+        } else {
+          file = files.find(x => x.includes(obj.image));
+          file = `./data/uploads/${file}`;
+        }
         console.log("handleMultipleFiles",file);
         const size = getFilesizeInBytes(file);
         const array = file.split(".");
