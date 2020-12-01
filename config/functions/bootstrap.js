@@ -131,68 +131,66 @@ const createSeedData = async (files) => {
 };
 
 const createContent = async (files, pdfs) => {
-  const handleFiles = (data) => {
-    var file = files.find(x => x.includes(data.slug));
-    file = `./data/uploads/${file}`;
-    console.log("handleFiles",file);
+  const getimage = (file, objname) => {
     const size = getFilesizeInBytes(file);
     const array = file.split(".");
     const ext = array[array.length - 1]
     const mimeType = `image/.${ext}`;
     const image = {
-      path: file,
-      name: `${data.slug}.${ext}`,
-      size,
-      type: mimeType
+        path: file,
+        name: `${objname}.${ext}`,
+        size,
+        type: mimeType
     };
-    return image
+    return image;
   }
-
+  const handleFiles = (data) => {
+    var file = files.find(x => x.includes(data.slug));
+    file = `./data/uploads/${file}`;
+    return getimage(file, data.slug)
+  }
   const handleMultipleFiles = (data) => {
     if (data.names) {
       const images = data.names.map(obj => {
-        var file;
-        if (obj.pdfimage) {
-          file = pdfs.find(x => x.includes(obj.pdfimage));
-          file = `./data/uploads/pdf-reports/${file}`;
-        } else {
-          file = files.find(x => x.includes(obj.image));
-          file = `./data/uploads/${file}`;
-        }
-        console.log("handleMultipleFiles",file);
-        const size = getFilesizeInBytes(file);
-        const array = file.split(".");
-        const ext = array[array.length - 1]
-        const mimeType = `image/.${ext}`;
-        const image = {
-            path: file,
-            name: `${obj.image}.${ext}`,
-            size,
-            type: mimeType
-        };
-        return image;
+        var file = files.find(x => x.includes(obj.image));
+        file = `./data/uploads/${file}`;
+        return getimage(file, obj.image)
       })
       return images;
     }
   }
+  const handleMultiplepdfs = (data) => {
+    if (data.names) {
+      const pdfimages = data.names.map(obj => {
+        if (obj.pdfimage) {
+          var file = pdfs.find(x => x.includes(obj.pdfimage));
+          file = `./data/uploads/pdf-reports/${file}`;
+          return getimage(file, obj.pdfimage)
+        }
+      })
+      return pdfimages;
+    }
+  }
 
-  const homebannerPromises = homebanner.map(async homebanner => {
-    const bannerimage = handleFiles(homebanner)
-
+  const promisesData = async (images, data, str) => {
     const files = {
-      bannerimage
+      images
     };
      try {
-      const entry = await strapi.query("homebanner").create(homebanner);
+      const entry = await strapi.query(str).create(data);
 
       if (files) {
         await strapi.entityService.uploadFiles(entry, files, {
-          model: 'homebanner'
+          model: str
         });
       }
     } catch (e) {
       console.log(e);
     }  
+  }
+  const homebannerPromises = homebanner.map(async homebanner => {
+    const bannerimage = handleFiles(homebanner)
+    promisesData(bannerimage, homebanner, 'homebanner')
   });
   
   const homepagewidgetsPromises = homepagewidgets.map(async homepagewidget => {
@@ -412,9 +410,11 @@ const createContent = async (files, pdfs) => {
 
   const downloadPromises = downloads.map(async download => {
     const images = await handleMultipleFiles(download)
+    const pdfimg = await handleMultiplepdfs(download)
 
     const files = {
-      images
+      images,
+      pdfimg
     };
 
     try {
