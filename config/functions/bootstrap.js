@@ -173,7 +173,6 @@ const createContent = async (files, pdfs) => {
   }
 
   const promisesData = async (images, data, str) => {
-    console.log(str);
      try {
       const entry = await strapi.query(str).create(data);
 
@@ -208,17 +207,7 @@ const createContent = async (files, pdfs) => {
     const files = {
       image
     };
-
-    try {
-      const entry = await strapi.query("force").create(force);
-      if (files) {
-        await strapi.entityService.uploadFiles(entry, files, {
-          model: 'force'
-        });
-      }
-    } catch (e) {
-      console.log(e);
-    }  
+    await promisesData(files, force, "force")
   });
   
   const carouselcontentPromises = carouselcontent.map(async carouselcontent => {
@@ -227,17 +216,7 @@ const createContent = async (files, pdfs) => {
     const files = {
       carouselimage
     };
-
-    try {
-      const entry = await strapi.query("carouselcontent").create(carouselcontent);
-      if (files) {
-        await strapi.entityService.uploadFiles(entry, files, {
-          model: 'carouselcontent'
-        });
-      }
-    } catch (e) {
-      console.log(e);
-    }  
+    await promisesData(files, carouselcontent, "carouselcontent")
   });
   
   const featurescontentPromises = features.map(async features => {
@@ -254,16 +233,7 @@ const createContent = async (files, pdfs) => {
     const files = {
       image
     };
-    try {
-      const entry = await strapi.query("ourcustomers").create(ourcustomers);
-      if (files) {
-        await strapi.entityService.uploadFiles(entry, files, {
-          model: 'ourcustomers'
-        });
-      }
-    } catch (e) {
-      console.log(e);
-    }  
+    await promisesData(files, ourcustomers, "ourcustomers")
   });
   
   const downloadDataPromises = downloadcontent.map(async downloadcontent => {
@@ -280,16 +250,7 @@ const createContent = async (files, pdfs) => {
     const files = {
       image
     };
-    try {
-      const entry = await strapi.query("awesomefeatures").create(awesomefeatures);
-      if (files) {
-        await strapi.entityService.uploadFiles(entry, files, {
-          model: 'awesomefeatures'
-        });
-      }
-    } catch (e) {
-      console.log(e);
-    }  
+    await promisesData(files, awesomefeatures, "awesomefeatures")
   });
 
   const aboutCompanyPromises = aboutcompany.map(async aboutcompany => {
@@ -300,16 +261,7 @@ const createContent = async (files, pdfs) => {
       bannerimage,
       productimage
     };
-    try {
-      const entry = await strapi.query("aboutcompany").create(aboutcompany);
-      if (files) {
-        await strapi.entityService.uploadFiles(entry, files, {
-          model: 'aboutcompany'
-        });
-      }
-    } catch (e) {
-      console.log(e);
-    }  
+    await promisesData(files, aboutcompany, "aboutcompany")
   });
 
   const forcesystemPromises = forcesystem.map(async forcesystem => {
@@ -320,17 +272,7 @@ const createContent = async (files, pdfs) => {
       image,
       images
     };
-
-    try {
-      const entry = await strapi.query("forcesystem").create(forcesystem);
-      if (files) {
-        await strapi.entityService.uploadFiles(entry, files, {
-          model: 'forcesystem'
-        });
-      }
-    } catch (e) {
-      console.log(e);
-    }  
+    await promisesData(files, forcesystem, "forcesystem")
   });
 
   const portfolioPromises = portfolio.map(async portfolio => {
@@ -339,17 +281,7 @@ const createContent = async (files, pdfs) => {
     const files = {
       images
     };
-
-    try {
-      const entry = await strapi.query("portfolio").create(portfolio);
-      if (files) {
-        await strapi.entityService.uploadFiles(entry, files, {
-          model: 'portfolio'
-        });
-      }
-    } catch (e) {
-      console.log(e);
-    }  
+    await promisesData(files, portfolio, "portfolio")
   });
 
   const forcepilotfinalPromises = forcepilotfinalreport.map(async forcepilotfinalreport => {
@@ -358,17 +290,7 @@ const createContent = async (files, pdfs) => {
     const files = {
       images
     };
-
-    try {
-      const entry = await strapi.query("forcepilotfinalreport").create(forcepilotfinalreport);
-      if (files) {
-        await strapi.entityService.uploadFiles(entry, files, {
-          model: 'forcepilotfinalreport'
-        });
-      }
-    } catch (e) {
-      console.log(e);
-    }  
+    await promisesData(files, forcepilotfinalreport, "forcepilotfinalreport")
   });
 
   const energysavingsystemPromises = forceenergysavingsystem.map(async forceenergysavingsystem => {
@@ -377,17 +299,7 @@ const createContent = async (files, pdfs) => {
     const files = {
       images
     };
-
-    try {
-      const entry = await strapi.query("forceenergysavingsystem").create(forceenergysavingsystem);
-      if (files) {
-        await strapi.entityService.uploadFiles(entry, files, {
-          model: 'forceenergysavingsystem'
-        });
-      }
-    } catch (e) {
-      console.log(e);
-    }  
+    await promisesData(files, forceenergysavingsystem, "forceenergysavingsystem")
   });
   
   const forcepilotreportPromises = forcepilotreport.map(async forcepilotreport => {
@@ -396,17 +308,7 @@ const createContent = async (files, pdfs) => {
     const files = {
       images
     };
-
-    try {
-      const entry = await strapi.query("forcepilotreport").create(forcepilotreport);
-      if (files) {
-        await strapi.entityService.uploadFiles(entry, files, {
-          model: 'forcepilotreport'
-        });
-      }
-    } catch (e) {
-      console.log(e);
-    }  
+    await promisesData(files, forcepilotreport, "forcepilotreport")  
   });
 
   const downloadPromises = downloads.map(async download => {
@@ -417,17 +319,7 @@ const createContent = async (files, pdfs) => {
       images,
       pdffiles
     };
-
-    try {
-      const entry = await strapi.query("download").create(download);
-      if (files) {
-        await strapi.entityService.uploadFiles(entry, files, {
-          model: 'download'
-        });
-      }
-    } catch (e) {
-      console.log(e);
-    }  
+    await promisesData(files, download, "download")  
   });
   
   const contactsPromises = contacts.map(async contact => {
@@ -436,19 +328,7 @@ const createContent = async (files, pdfs) => {
     const files = {
       images
     };
-
-    try {
-      const entry = await strapi.query('contact').create(contact);
-
-      if (files) {
-        await strapi.entityService.uploadFiles(entry, files, {
-          model: 'contact'
-        });
-      }
-    } catch (e) {
-      console.log(e);
-    }
-
+    await promisesData(files, contact, "contact")
   });
 
   await Promise.all(homebannerPromises);
