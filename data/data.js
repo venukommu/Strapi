@@ -826,8 +826,8 @@ module.exports = {
       Title: "5.Power Saving Device Mechanism",
       image: null,
       pdffiles: null,
-      names: [{id: 1, image: "u03_5-1", pdfimage: "u03_5-1", imagelabel: "Power Saving Device Mechanism"}, {id: 2, image: "u03_5-2", pdfimage: "u03_5-2", imagelabel: "Power Saving Device Mechanism"}, {id: 3, image: "u03_5-3", pdfimage: "u03_5-3", imagelabel: "Power Saving Device Mechanism"}, 
-      {id: 4, image: "u03_5-4", pdfimage: "u03_5-4", imagelabel: "Power Saving Device Mechanism"}, {id: 5, image: "u03_5-5", pdfimage: "u03_5-5", imagelabel: "Power Saving Device Mechanism"}, {id: 6, image: "u03_5-6", pdfimage: "u03_5-6", imagelabel: "Power Saving Device Mechanism" }]
+      names: [{id: 1, image: "u03_5-1", pdfimage: "u03_5-1", imagelabel: "Power Saving Device Mechanism"}, {id: 2, image: "u03_5-2", pdfimage: "u03_5-2", imagelabel: "Power Saving Device Mechanism"}, {id: 3, image: "u03_5-3", pdfimage: "u03_5-3", imagelabel: "Minimize Electronic Wasting"}, 
+      {id: 4, image: "u03_5-4", pdfimage: "u03_5-4", imagelabel: "Diminish Impedance"}, {id: 5, image: "u03_5-5", pdfimage: "u03_5-5", imagelabel: "Filter Harmonic Distortion"}, {id: 6, image: "u03_5-6", pdfimage: "u03_5-6", imagelabel: "Reactive Power Improvement" }]
     }
   ],
   contacts: [
