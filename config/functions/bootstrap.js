@@ -91,7 +91,7 @@ const createSeedData = async (files) => {
       path: file,
       name: `${data.slug}.${ext}`,
       size,
-      type: mimeType
+      type: mimeType,
     };
     return image
   }
@@ -142,6 +142,7 @@ const createContent = async (files, pdfs) => {
         size,
         type: mimeType
     };
+    console.log("getimage",image)
     return image;
   }
   const handleFiles = (data) => {
@@ -150,12 +151,13 @@ const createContent = async (files, pdfs) => {
     return getimage(file, data.slug)
   }
   const handleMultipleFiles = (data) => {
-    if (data.names) {
-      const images = data.names.map(obj => {
-        var file = files.find(x => x.includes(obj.image));
+    if (data.images) {
+      const images = data.images.map(obj => {
+        var file = files.find(x => x.includes(obj.id));
         file = `./data/uploads/${file}`;
-        return getimage(file, obj.image)
+        return getimage(file, obj.id)
       })
+      console.log("handleMultipleFiles",images)
       return images;
     }
   }
