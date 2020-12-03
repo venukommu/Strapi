@@ -151,11 +151,11 @@ const createContent = async (files, pdfs) => {
     return getimage(file, data.slug)
   }
   const handleMultipleFiles = (data) => {
-    if (data.images) {
-      const images = data.images.map(obj => {
-        var file = files.find(x => x.includes(obj.id));
+    if (data.names) {
+      const images = data.names.map(obj => {
+        var file = files.find(x => x.includes(obj.image));
         file = `./data/uploads/${file}`;
-        return getimage(file, obj.id)
+        return getimage(file, obj.image)
       })
       console.log("handleMultipleFiles",images)
       return images;
