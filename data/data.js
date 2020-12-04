@@ -798,7 +798,7 @@ module.exports = {
       Title: "1.Certificate",
       images: null,
       pdffiles: null,
-      names: [{ image: "u03_1-1", pdfimage: "u03_1-1", imagelabel: "UL Approval Letter"}, {image: "u03_1-2", pdfimage: "u03_1-2", imagelabel: "Certification & Test Report"}]
+      names: [{id: 1, image: "u03_1-2", pdfimage: "u03_1-2", imagelabel: "Certification & Test Report"}, {id: 2, image: "u03_1-1", pdfimage: "u03_1-1", imagelabel: "UL Approval Letter"}]
     },
     {
       id :2,
