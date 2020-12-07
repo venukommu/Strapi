@@ -798,36 +798,36 @@ module.exports = {
       Title: "1.Certificate",
       images: null,
       pdffiles: null,
-      names: [{id: 1, image: "u03_1-1", pdfimage: "u03_1-1", imagelabel: "UL Approval Letter"}, {id: 2, image: "u03_1-2", pdfimage: "u03_1-2", imagelabel: "Certification & Test Report"}]
+      names: [{id: 1, image: "u03_1-2", pdfimage: "u03_1-2", imagelabel: "Certification & Test Report"}, {id: 2, image: "u03_1-1", pdfimage: "u03_1-1", imagelabel: "UL Approval Letter"}]
     },
     {
       id :2,
       Title: "2.Patent",
       images: null,
       pdffiles: null,
-      names: [{id: 1, image: "u03_2-1", pdfimage: "u03_2-1", imagelabel: "US Patent" }]
+      names: [{image: "u03_2-1", pdfimage: "u03_2-1", imagelabel: "US Patent" }]
     },
     {
       id: 3,
       Title: "3.Comparative Report",
       images: null,
       pdffiles: null, 
-      names: [{id: 1, image: "u03_3-1", pdfimage: "u03_3-1", imagelabel: "Comparative Report" }] 
+      names: [{image: "u03_3-1", pdfimage: "u03_3-1", imagelabel: "Comparative Report" }] 
     },
     {
       id: 4,
       Title: "4.Installation Method",
       images: null,
       pdffiles: null,
-      names: [{id: 1, image: "u03_4-1", pdfimage: "u03_4-1", imagelabel: "Installation Method" }]
+      names: [{image: "u03_4-1", pdfimage: "u03_4-1", imagelabel: "Installation Method" }]
     },
     {
       id :5,
       Title: "5.Power Saving Device Mechanism",
       images: null,
       pdffiles: null,
-      names: [{id: 1, image: "u03_5-1", pdfimage: "u03_5-1", imagelabel: "Power Saving Device Mechanism"}, {id: 2, image: "u03_5-2", pdfimage: "u03_5-2", imagelabel: "Power Saving Device Mechanism"}, {id: 3, image: "u03_5-3", pdfimage: "u03_5-3", imagelabel: "Minimize Electronic Wasting"}, 
-      {id: 4, image: "u03_5-4", pdfimage: "u03_5-4", imagelabel: "Diminish Impedance"}, {id: 5, image: "u03_5-5", pdfimage: "u03_5-5", imagelabel: "Filter Harmonic Distortion"}, {id: 6, image: "u03_5-6", pdfimage: "u03_5-6", imagelabel: "Reactive Power Improvement" }]
+      names: [{image: "u03_5-1", pdfimage: "u03_5-1", imagelabel: "Power Saving Device Mechanism"}, {image: "u03_5-2", pdfimage: "u03_5-2", imagelabel: "Power Saving Device Mechanism"}, {image: "u03_5-3", pdfimage: "u03_5-3", imagelabel: "Minimize Electronic Wasting"}, 
+      {image: "u03_5-4", pdfimage: "u03_5-4", imagelabel: "Diminish Impedance"}, {image: "u03_5-5", pdfimage: "u03_5-5", imagelabel: "Filter Harmonic Distortion"}, {image: "u03_5-6", pdfimage: "u03_5-6", imagelabel: "Reactive Power Improvement" }]
     }
   ],
   contacts: [
