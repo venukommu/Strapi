@@ -855,6 +855,22 @@ module.exports = {
       images: null
       //names: [{id: 3, images: "replace" }]
     },
+  ],
+  enpossproducts: [
+      {
+        id: 1,
+        title: "single-phase",
+        label: "BUY NOW",
+        slug: "single-phase",
+        image: null
+      },
+      {
+        id: 2,
+        title: "3phase",
+        label: "BUY NOW",
+        slug: "3phase",
+        image: null
+      }
   ]
 };
 

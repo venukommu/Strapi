@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/enpossproducts",
+      "handler": "enpossproducts.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/enpossproducts/count",
+      "handler": "enpossproducts.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/enpossproducts/:slug",
+      "handler": "enpossproducts.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/enpossproducts",
+      "handler": "enpossproducts.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/enpossproducts/:id",
+      "handler": "enpossproducts.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/enpossproducts/:id",
+      "handler": "enpossproducts.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

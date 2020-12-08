@@ -22,6 +22,7 @@ const {
   forcepilotreport,
   downloads,
   contacts,
+  enpossproducts
 } = require("../../data/data");
 
 const findPublicRole = async () => {
@@ -331,6 +332,15 @@ const createContent = async (files, pdfs) => {
     await promisesData(files, contact, "contact")
   });
 
+  const enpossPromises = enpossproducts.map(async enpossproducts => {
+    const images = handleFiles(enpossproducts)
+
+    const files = {
+      images
+    };
+    await promisesData(files, enpossproducts, "enpossproducts")
+  });
+
   await Promise.all(homebannerPromises);
   await Promise.all(homepagewidgetsPromises);
   await Promise.all(forcePromises);
@@ -347,6 +357,7 @@ const createContent = async (files, pdfs) => {
   await Promise.all(forcepilotreportPromises);
   await Promise.all(downloadPromises);
   await Promise.all(contactsPromises);
+  await Promise.all(enpossPromises);
 };
 
 module.exports = async () => {
