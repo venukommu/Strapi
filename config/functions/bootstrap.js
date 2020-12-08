@@ -142,7 +142,6 @@ const createContent = async (files, pdfs) => {
         size,
         type: mimeType
     };
-    console.log("getimage",image)
     return image;
   }
   const handleFiles = (data) => {
@@ -157,7 +156,6 @@ const createContent = async (files, pdfs) => {
         file = `./data/uploads/${file}`;
         return getimage(file, obj.image)
       })
-      console.log("handleMultipleFiles",images)
       return images;
     }
   }
