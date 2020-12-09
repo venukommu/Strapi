@@ -177,8 +177,8 @@ const createContent = async (files, pdfs) => {
      try {
       const entry = await strapi.query(modelname).create(data);
 
-      if (files) {
-        await strapi.entityService.uploadFiles(entry, images, {
+      if (images) {
+        await strapi.entityService.uploadFiles(entry, {images}, {
           model: modelname
         });
       }
@@ -188,10 +188,10 @@ const createContent = async (files, pdfs) => {
   }
   const homebannerPromises = homebanner.map(async homebanner => {
     const bannerimage = handleFiles(homebanner)
-    const files = {
+    const imgfiles = {
       bannerimage
     };
-    await promisesData(files, homebanner, "homebanner")
+    await promisesData(imgfiles, homebanner, "homebanner")
   });
   
   const homepagewidgetsPromises = homepagewidgets.map(async homepagewidget => {
@@ -205,19 +205,19 @@ const createContent = async (files, pdfs) => {
   const forcePromises = force.map(async force => {
     const image = handleFiles(force)
 
-    const files = {
+    const imgfiles = {
       image
     };
-    await promisesData(files, force, "force")
+    await promisesData(imgfiles, force, "force")
   });
   
   const carouselcontentPromises = carouselcontent.map(async carouselcontent => {
     const carouselimage = await handleMultipleFiles(carouselcontent)
 
-    const files = {
+    const imgfiles = {
       carouselimage
     };
-    await promisesData(files, carouselcontent, "carouselcontent")
+    await promisesData(imgfiles, carouselcontent, "carouselcontent")
   });
   
   const featurescontentPromises = features.map(async features => {
@@ -231,10 +231,10 @@ const createContent = async (files, pdfs) => {
   const customersDataPromises = ourcustomers.map(async ourcustomers => {
     const image = handleFiles(ourcustomers)
 
-    const files = {
+    const imgfiles = {
       image
     };
-    await promisesData(files, ourcustomers, "ourcustomers")
+    await promisesData(imgfiles, ourcustomers, "ourcustomers")
   });
   
   const downloadDataPromises = downloadcontent.map(async downloadcontent => {
@@ -248,99 +248,100 @@ const createContent = async (files, pdfs) => {
   const awesomefeaturesPromises = awesomefeatures.map(async awesomefeatures => {
     const image = handleFiles(awesomefeatures)
 
-    const files = {
+    const imgfiles = {
       image
     };
-    await promisesData(files, awesomefeatures, "awesomefeatures")
+    await promisesData(imgfiles, awesomefeatures, "awesomefeatures")
   });
 
   const aboutCompanyPromises = aboutcompany.map(async aboutcompany => {
     const bannerimage = handleFiles(aboutcompany)
     const productimage = await handleMultipleFiles(aboutcompany)
 
-    const files = {
+    const imgfiles = {
       bannerimage,
       productimage
     };
-    await promisesData(files, aboutcompany, "aboutcompany")
+    await promisesData(imgfiles, aboutcompany, "aboutcompany")
   });
 
   const forcesystemPromises = forcesystem.map(async forcesystem => {
     const image = handleFiles(forcesystem)
     const images = await handleMultipleFiles(forcesystem)
 
-    const files = {
+    const imgfiles = {
       image,
       images
     };
-    await promisesData(files, forcesystem, "forcesystem")
+    await promisesData(imgfiles, forcesystem, "forcesystem")
   });
 
   const portfolioPromises = portfolio.map(async portfolio => {
     const images = await handleMultipleFiles(portfolio)
 
-    const files = {
+    const imgfiles = {
       images
     };
-    await promisesData(files, portfolio, "portfolio")
+    await promisesData(imgfiles, portfolio, "portfolio")
   });
 
   const forcepilotfinalPromises = forcepilotfinalreport.map(async forcepilotfinalreport => {
     const images = await handleMultipleFiles(forcepilotfinalreport)
 
-    const files = {
+    const imgfiles = {
       images
     };
-    await promisesData(files, forcepilotfinalreport, "forcepilotfinalreport")
+    await promisesData(imgfiles, forcepilotfinalreport, "forcepilotfinalreport")
   });
 
   const energysavingsystemPromises = forceenergysavingsystem.map(async forceenergysavingsystem => {
     const images = await handleMultipleFiles(forceenergysavingsystem)
 
-    const files = {
+    const imgfiles = {
       images
     };
-    await promisesData(files, forceenergysavingsystem, "forceenergysavingsystem")
+    await promisesData(imgfiles, forceenergysavingsystem, "forceenergysavingsystem")
   });
   
   const forcepilotreportPromises = forcepilotreport.map(async forcepilotreport => {
     const images = await handleMultipleFiles(forcepilotreport)
 
-    const files = {
+    const imgfiles = {
       images
     };
-    await promisesData(files, forcepilotreport, "forcepilotreport")  
+    await promisesData(imgfiles, forcepilotreport, "forcepilotreport")  
   });
 
   const downloadPromises = downloads.map(async download => {
     const images = await handleMultipleFiles(download)
     const pdffiles = await handleMultiplepdfs(download)
 
-    const files = {
+    const imgfiles = {
       images,
       pdffiles
     };
-    await promisesData(files, download, "download")  
+    await promisesData(imgfiles, download, "download")  
   });
   
   const contactsPromises = contacts.map(async contact => {
     const images = handleFiles(contact)
 
-    const files = {
+    const imgfiles = {
       images
     };
-    await promisesData(files, contact, "contact")
+    await promisesData(imgfiles, contact, "contact")
   });
 
   const enpossPromises = enpossproducts.map(async enpossproducts => {
     const images = handleFiles(enpossproducts)
 
-    const files = {
+    const imgfiles = {
       images
     };
-    await promisesData(files, enpossproducts, "enpossproducts")
+    await promisesData(imgfiles, enpossproducts, "enpossproducts")
   });
 
+  console.log(downloadPromises);
   await Promise.all(homebannerPromises);
   await Promise.all(homepagewidgetsPromises);
   await Promise.all(forcePromises);
