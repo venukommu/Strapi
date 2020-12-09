@@ -341,7 +341,6 @@ const createContent = async (files, pdfs) => {
     await promisesData(imgfiles, enpossproducts, "enpossproducts")
   });
 
-  console.log(downloadPromises);
   await Promise.all(homebannerPromises);
   await Promise.all(homepagewidgetsPromises);
   await Promise.all(forcePromises);
