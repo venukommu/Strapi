@@ -178,7 +178,7 @@ const createContent = async (files, pdfs) => {
       const entry = await strapi.query(modelname).create(data);
 
       if (images) {
-        await strapi.entityService.uploadFiles(entry, {images}, {
+        await strapi.entityService.uploadFiles(entry, images, {
           model: modelname
         });
       }

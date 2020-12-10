@@ -13,6 +13,10 @@ module.exports = {
         } else {
           entities = await strapi.services.portfolio.find(ctx.query);
         }
+        entities.names.map(val => (
+          val["url"] = entities.images.filter(v => v.name.includes(val.image)).map(v => v.url).toString()
+        ))
+
         return sanitizeEntity(entities, { model: strapi.models.portfolio });
     },
 };

@@ -12,6 +12,9 @@ module.exports = {
         } else {
           entities = await strapi.services.carouselcontent.find(ctx.query);
         }
+        entities.names.map(val => (
+          val["url"] = entities.carouselimage.filter(v => v.name.includes(val.image)).map(v => v.url).toString()
+        ))
         return sanitizeEntity(entities, { model: strapi.models.carouselcontent });
         //return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.carouselcontent }));
       },
