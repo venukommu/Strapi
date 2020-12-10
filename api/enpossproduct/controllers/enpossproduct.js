@@ -15,7 +15,7 @@ module.exports = {
   async findOne(ctx) {
     const { slug } = ctx.params;
 
-    const entity = await strapi.services.enpossproducts.findOne({ slug });
-    return sanitizeEntity(entity, { model: strapi.models.enpossproducts });
+    const entity = await strapi.services.enpossproduct.findOne({ slug });
+    return sanitizeEntity(entity, { model: strapi.models.enpossproduct });
   },
 };

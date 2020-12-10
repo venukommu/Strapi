@@ -2,13 +2,12 @@
   "kind": "collectionType",
   "collectionName": "enpossproducts",
   "info": {
-    "name": "enpossproducts",
+    "name": "enpossproduct",
     "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true,
-    "draftAndPublish": true
+    "timestamps": true
   },
   "attributes": {
     "title": {

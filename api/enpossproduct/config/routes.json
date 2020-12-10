@@ -3,7 +3,7 @@
     {
       "method": "GET",
       "path": "/enpossproducts",
-      "handler": "enpossproducts.find",
+      "handler": "enpossproduct.find",
       "config": {
         "policies": []
       }
@@ -11,15 +11,15 @@
     {
       "method": "GET",
       "path": "/enpossproducts/count",
-      "handler": "enpossproducts.count",
+      "handler": "enpossproduct.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/enpossproducts/:id",
-      "handler": "enpossproducts.findOne",
+      "path": "/enpossproducts/:slug",
+      "handler": "enpossproduct.findOne",
       "config": {
         "policies": []
       }
@@ -27,7 +27,7 @@
     {
       "method": "POST",
       "path": "/enpossproducts",
-      "handler": "enpossproducts.create",
+      "handler": "enpossproduct.create",
       "config": {
         "policies": []
       }
@@ -35,7 +35,7 @@
     {
       "method": "PUT",
       "path": "/enpossproducts/:id",
-      "handler": "enpossproducts.update",
+      "handler": "enpossproduct.update",
       "config": {
         "policies": []
       }
@@ -43,7 +43,7 @@
     {
       "method": "DELETE",
       "path": "/enpossproducts/:id",
-      "handler": "enpossproducts.delete",
+      "handler": "enpossproduct.delete",
       "config": {
         "policies": []
       }

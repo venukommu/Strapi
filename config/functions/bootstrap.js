@@ -332,13 +332,13 @@ const createContent = async (files, pdfs) => {
     await promisesData(imgfiles, contact, "contact")
   });
 
-  const enpossPromises = enpossproducts.map(async enpossproducts => {
-    const images = handleFiles(enpossproducts)
+  const enpossPromises = enpossproducts.map(async enpossproduct => {
+    const images = handleFiles(enpossproduct)
 
     const imgfiles = {
       images
     };
-    await promisesData(imgfiles, enpossproducts, "enpossproducts")
+    await promisesData(imgfiles, enpossproduct, "enpossproduct")
   });
 
   await Promise.all(homebannerPromises);
