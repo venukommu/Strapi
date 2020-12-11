@@ -862,14 +862,14 @@ module.exports = {
         title: "single-phase",
         label: "BUY NOW",
         slug: "single-phase",
-        image: null
+        images: null
       },
       {
         id: 2,
         title: "3phase",
         label: "BUY NOW",
         slug: "3phase",
-        image: null
+        images: null
       }
   ]
 };

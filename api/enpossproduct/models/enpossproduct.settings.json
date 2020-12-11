@@ -7,25 +7,23 @@
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "title": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": true
     },
     "label": {
       "type": "string",
-      "required": true,
-      "unique": false
+      "required": true
     },
     "slug": {
       "type": "uid",
-      "targetField": "title",
-      "required": true
+      "targetField": "title"
     },
-    "image": {
+    "images": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
