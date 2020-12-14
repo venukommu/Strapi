@@ -36,6 +36,6 @@ module.exports = {
       val["url"] = entities.images.filter(v => v.name.includes(val.image)).map(v => v.url).toString()
     ))
 
-    return sanitizeEntity(entities, { model: strapi.models.portfolio });
+    return sanitizeEntity(entities, { model: strapi.models.forcepilotfinalreport });
 },
 }

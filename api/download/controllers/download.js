@@ -27,6 +27,6 @@ module.exports = {
         val["pdfurl"] = item.pdffiles.filter(v => v.name.includes(val.image)).map(v => v.url).toString()
       ))
     ))
-    return sanitizeEntity(entities, { model: strapi.models.forceenergysavingsystem });
+    return sanitizeEntity(entities, { model: strapi.models.download });
 },
 };
