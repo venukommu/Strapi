@@ -18,6 +18,14 @@
     },
     {
       "method": "GET",
+      "path": "/snipcartParser",
+      "handler": "enpossproduct.snipcartParser",
+      "config": {
+      "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/enpossproducts/:slug",
       "handler": "enpossproduct.findOne",
       "config": {

@@ -13,9 +13,20 @@ module.exports = {
    */
 
   async findOne(ctx) {
-    const { slug } = ctx.params;
+    const { id } = ctx.params;
 
-    const entity = await strapi.services.enpossproduct.findOne({ slug });
+    const entity = await strapi.services.enpossproduct.findOne({ id });
     return sanitizeEntity(entity, { model: strapi.models.enpossproduct });
   },
+
+  snipcartParser: async (ctx) => {
+    let products = await strapi.services.enpossproduct.fetchAll(ctx.query);
+    return products.map(product => {
+        return {
+        id: product._id,
+        price: product.price,
+        url: "https://snipcart-strapi.herokuapp.com/snipcartParser"
+        }
+    })
+}
 };
