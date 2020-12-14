@@ -862,6 +862,7 @@ module.exports = {
         title: "single-phase",
         label: "BUY NOW",
         slug: "single-phase",
+        price: 1000,
         images: null
       },
       {
@@ -869,6 +870,7 @@ module.exports = {
         title: "3phase",
         label: "BUY NOW",
         slug: "3phase",
+        price: 2000,
         images: null
       }
   ]

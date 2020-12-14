@@ -33,6 +33,10 @@
       ],
       "plugin": "upload",
       "required": true
+    },
+    "price": {
+      "type": "float",
+      "required": true
     }
   }
 }
