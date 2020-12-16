@@ -25,7 +25,8 @@ module.exports = {
         return {
         id: product._id,
         price: product.price,
-        url: "https://snipcart-strapi.herokuapp.com/snipcartParser"
+        //url: "https://snipcart-strapi.herokuapp.com/snipcartParser"
+        url: "http://localhost:1337/enpossproducts"
         }
     })
 }

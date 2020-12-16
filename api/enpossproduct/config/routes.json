@@ -26,7 +26,7 @@
     },
     {
       "method": "GET",
-      "path": "/enpossproducts/:slug",
+      "path": "/enpossproducts/:id",
       "handler": "enpossproduct.findOne",
       "config": {
         "policies": []
