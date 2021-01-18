@@ -19,14 +19,15 @@ module.exports = {
     return sanitizeEntity(entity, { model: strapi.models.enpossproduct });
   },
 
-  snipcartParser: async (ctx) => {
-    let products = await strapi.services.enpossproduct.fetchAll(ctx.query);
+  snipcartparser: async (ctx) => {
+    let products = await strapi.services.enpossproduct.find(ctx.query);
+    console.log(products);
     return products.map(product => {
         return {
-        id: product._id,
+        id: product.id,
         price: product.price,
         //url: "https://snipcart-strapi.herokuapp.com/snipcartParser"
-        url: "http://localhost:1337/enpossproducts"
+        url: "http://localhost:1337/enpossproducts/snipcartparser"
         }
     })
 }

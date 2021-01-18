@@ -18,8 +18,8 @@
     },
     {
       "method": "GET",
-      "path": "/snipcartParser",
-      "handler": "enpossproduct.snipcartParser",
+      "path": "/enpossproducts/snipcartparser",
+      "handler": "enpossproduct.snipcartparser",
       "config": {
       "policies": []
       }
