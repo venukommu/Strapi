@@ -7,14 +7,10 @@
   },
   "options": {
     "increments": true,
-    "timestamps": true,
-    "draftAndPublish": true
+    "timestamps": true
   },
   "attributes": {
     "name": {
-      "type": "string"
-    },
-    "address": {
       "type": "string"
     },
     "amount": {
@@ -29,6 +25,15 @@
     "token": {
       "type": "string",
       "required": true
+    },
+    "status": {
+      "type": "string"
+    },
+    "billingaddress": {
+      "type": "json"
+    },
+    "shippingaddress": {
+      "type": "json"
     }
   }
 }

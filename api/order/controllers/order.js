@@ -16,33 +16,48 @@ module.exports = {
    */
 
   create: async (ctx) => {
-      console.log(ctx.request.body);
-    const { address, amount, token, city, state } = 
-      ctx.request.body;
+    //console.log(ctx.request.body);
+    const { product, token } =  ctx.request.body;
+
+    const customer = await stripe.customers.create({
+      email: token.email,
+      source: token.id 
+    })
    
-    const stripeAmount = amount;
     // charge on stripe
     try {
     const charge = await stripe.charges.create({
       // Transform cents to dollars.
-      amount: stripeAmount * 100,
+      amount: product.price,
       currency: "usd",
-      //description: `Order ${new Date()} by ${ctx.state.user._id}`,
-      description: "First Test Charge",
-      source: token,
+      customer: customer.id,
+      receipt_email: token.email,
+      description: "All Products Description",
+      shipping: {
+        name: token.card.name,
+        address: {
+          line1: token.card.address_line1,
+          line2: token.card.address_line2,
+          city: token.card.address_city,
+          country: token.card.country,
+          postal_code: token.card.address_zip
+        }
+      }
     });
-    console.log(charge);
+    //console.log(charge);
     // Register the order in the database
     try {
     const order = await strapi.services.order.create({
       //user: ctx.state.user.id,
       charge_id: charge.id,
-      amount: stripeAmount,
-      address,
-      city,
-      state,
-      token,
-      status: charge.status
+      name: token.card.name,
+      amount: charge.amount,
+      city: token.card.address_city,
+      state: token.card.address_state,
+      token: token.id,
+      status: charge.status,
+      billingaddress: charge.billing_details.address,
+      shippingaddress: charge.shipping.address
     });
     return order;
   } catch (err) {
@@ -56,7 +71,6 @@ module.exports = {
     return ctx.response;
   }
   },
-
 };
 
 
