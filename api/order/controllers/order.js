@@ -22,16 +22,18 @@ module.exports = {
    
     const stripeAmount = amount;
     // charge on stripe
+    try {
     const charge = await stripe.charges.create({
       // Transform cents to dollars.
-      amount: stripeAmount,
+      amount: stripeAmount * 100,
       currency: "usd",
       //description: `Order ${new Date()} by ${ctx.state.user._id}`,
       description: "First Test Charge",
       source: token,
     });
-
+    console.log(charge);
     // Register the order in the database
+    try {
     const order = await strapi.services.order.create({
       //user: ctx.state.user.id,
       charge_id: charge.id,
@@ -39,9 +41,23 @@ module.exports = {
       address,
       city,
       state,
-      token
+      token,
+      status: charge.status
     });
-
     return order;
+  } catch (err) {
+    console.log('order error: ', err);
+  }
+  } catch (err) {
+    console.log('stripe error: ', err);
+    ctx.response.status = 400;
+    ctx.response.message = err.raw.message;
+    ctx.response.body = err;
+    return ctx.response;
+  }
   },
+
 };
+
+
+ 
