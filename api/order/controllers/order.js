@@ -50,7 +50,7 @@ module.exports = {
         //user: ctx.state.user.id,
         charge_id: charge.id,
         name: token.card.name,
-        amount: charge.amount,
+        amount: product.price,
         city: token.card.address_city,
         state: token.card.address_state,
         token: token.id,
