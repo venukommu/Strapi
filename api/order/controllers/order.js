@@ -27,7 +27,7 @@ module.exports = {
       })
       const charge = await stripe.charges.create({
       // Transform cents to dollars.
-        amount: product.price,
+        amount: product.price * 100,
         currency: "usd",
         customer: customer.id,
         receipt_email: token.email,
