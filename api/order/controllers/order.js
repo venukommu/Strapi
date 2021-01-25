@@ -18,7 +18,6 @@ module.exports = {
   create: async (ctx) => {
     //console.log(ctx.request.body);
     const { product, token } =  ctx.request.body;
-
     // charge on stripe
     try {
       const customer = await stripe.customers.create({
@@ -27,7 +26,7 @@ module.exports = {
       })
       const charge = await stripe.charges.create({
       // Transform cents to dollars.
-        amount: product.price * 100,
+        amount: parseFloat(product.price * 100),
         currency: "usd",
         customer: customer.id,
         receipt_email: token.email,
@@ -43,7 +42,7 @@ module.exports = {
           }
         }
     });
-    //console.log(charge);
+    console.log(charge);
     // Register the order in the database
     try {
       const order = await strapi.services.order.create({
