@@ -1,13 +1,25 @@
 module.exports = {
-    send: async ctx => {
-        await strapi.plugins['email'].services.email.send({
-            to: 'madhulika@baylogictech.com',
-            from: 'madhulika@baylogictech.com',
-            replyTo: 'madhulika@baylogictech.com',
-            subject: 'Use strapi email provider successfully',
-            text: 'Hello world!',
-            html: 'Hello world!',
-        });
-       ctx.send('Hello World!3');
+    /**
+     * Sends an email to the recipient in the body of the request
+     */
+    send: async (ctx) => {
+      const body = ctx.request.body
+      //const sendTo = body.email
+       const sendTo = 'madhulika@baylogictech.com'
+      strapi.log.debug(`Trying to send an email to ${sendTo}`)
+  
+      try {
+        const emailOptions = {
+          to: sendTo,
+          subject: 'This is a test',
+          html: `<h1>Welcome!</h1><p>This is a test HTML email.</p>`,
+        }
+        await strapi.plugins['email'].services.email.send(emailOptions)
+        strapi.log.debug(`Email sent to ${sendTo}`)
+        ctx.send({ message: 'Email sent' })
+      } catch (err) {
+        strapi.log.error(`Error sending email to ${sendTo}`, err)
+        ctx.send({ error: 'Error sending email' })
+      }
     },
-};
+  }
