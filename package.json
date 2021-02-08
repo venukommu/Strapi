@@ -21,7 +21,9 @@
     "strapi-plugin-email": "3.2.5",
     "strapi-plugin-upload": "3.2.5",
     "strapi-plugin-users-permissions": "3.2.5",
+    "strapi-provider-email-nodemailer": "^3.4.6",
     "strapi-provider-email-sendgrid": "^3.4.6",
+    "strapi-provider-email-sendmail": "^3.4.6",
     "strapi-utils": "3.2.5",
     "stripe": "^8.129.0"
   },

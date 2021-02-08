@@ -1,14 +1,25 @@
 module.exports = ({ env }) => ({
-    // ...
-    email: {
-      provider: 'sendgrid',
-      providerOptions: {
-        apiKey: env('SENDGRID_API_KEY'),
-      },
-      settings: {
-        defaultFrom: 'madhulika@baylogictech.com',
-        defaultReplyTo: 'madhulika@baylogictech.com',
+  // ...
+  email: {
+    provider: env('EMAIL_PROVIDER'),
+    providerOptions: {
+      host: env('EMAIL_SMTP_HOST', 'smtp.gmail.com'),
+      port: env('EMAIL_SMTP_PORT', 587),
+      auth: {
+        user: env('EMAIL_SMTP_USER'),
+        pass: env('EMAIL_SMTP_PASS'),
       },
     },
-    // ...
-  });
+    settings: {
+      defaultFrom: env('EMAIL_ADDRESS_FROM'),
+      defaultReplyTo: env('EMAIL_ADDRESS_REPLY'),
+    },
+  },
+  // ...
+})
+  
+
+
+
+
+  
