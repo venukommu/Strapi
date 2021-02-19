@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forcewidgets",
+  "info": {
+    "name": "forcewidget",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "images": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

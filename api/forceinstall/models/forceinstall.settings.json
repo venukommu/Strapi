@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "forceinstalls",
+  "info": {
+    "name": "forceinstall"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Beforeinstall": {
+      "type": "string",
+      "required": true
+    },
+    "Beforeinstalldescription": {
+      "type": "richtext"
+    },
+    "Orderinstall": {
+      "type": "string"
+    },
+    "Orderinstalldescription": {
+      "type": "richtext"
+    }
+  }
+}

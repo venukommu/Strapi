@@ -22,7 +22,11 @@ const {
   forcepilotreport,
   downloads,
   contacts,
-  enpossproducts
+  enpossproducts,
+  ceomessage,
+  companystory,
+  forcewidgets,
+  forceinstall
 } = require("../../data/data");
 
 const findPublicRole = async () => {
@@ -341,6 +345,39 @@ const createContent = async (files, pdfs) => {
     await promisesData(imgfiles, enpossproduct, "enpossproduct")
   });
 
+  const ceomessagePromises = ceomessage.map(async ceomessage => {
+    try {
+      await strapi.query("ceomessage").create(ceomessage);
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+
+  const companystoryPromises = companystory.map(async companystory => {
+    try {
+      await strapi.query("companystory").create(companystory);
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+
+  const forcewidgetPromises = forcewidgets.map(async forcewidgets => {
+    const images = handleFiles(forcewidgets)
+
+    const imgfiles = {
+      images
+    };
+    await promisesData(imgfiles, forcewidgets, "forcewidgets")
+  });
+  
+  const forceinstallPromises = forceinstall.map(async forceinstall => {
+    try {
+      await strapi.query("forceinstall").create(forceinstall);
+    } catch (e) {
+      console.log(e);
+    }  
+  });
+  
   await Promise.all(homebannerPromises);
   await Promise.all(homepagewidgetsPromises);
   await Promise.all(forcePromises);
@@ -358,6 +395,10 @@ const createContent = async (files, pdfs) => {
   await Promise.all(downloadPromises);
   await Promise.all(contactsPromises);
   await Promise.all(enpossPromises);
+  await Promise.all(ceomessagePromises);
+  await Promise.all(companystoryPromises);
+  await Promise.all(forcewidgetPromises);
+  await Promise.all(forceinstallPromises);
 };
 
 module.exports = async () => {

@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "companystories",
+  "info": {
+    "name": "companystory"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

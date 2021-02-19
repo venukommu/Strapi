@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "ceomessages",
+  "info": {
+    "name": "ceomessage",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
