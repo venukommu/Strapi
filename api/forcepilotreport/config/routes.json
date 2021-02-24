@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/forcepilotreport",
+      "handler": "forcepilotreport.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/forcepilotreport",
+      "handler": "forcepilotreport.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/forcepilotreport",
+      "handler": "forcepilotreport.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/forcesystem",
+      "handler": "forcesystem.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/forcesystem",
+      "handler": "forcesystem.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/forcesystem",
+      "handler": "forcesystem.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

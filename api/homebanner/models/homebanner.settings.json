@@ -1,0 +1,50 @@
+{
+  "kind": "singleType",
+  "collectionName": "homebanner",
+  "info": {
+    "name": "homebanner",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "private": false,
+      "unique": true,
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "energysavingbutton": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "forcesystembutton": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "bannerimage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Title",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/ceomessage",
+      "handler": "ceomessage.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/ceomessage",
+      "handler": "ceomessage.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/ceomessage",
+      "handler": "ceomessage.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/enpossproducts",
+      "handler": "enpossproduct.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/enpossproducts/count",
+      "handler": "enpossproduct.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/enpossproducts/snipcartparser",
+      "handler": "enpossproduct.snipcartparser",
+      "config": {
+      "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/enpossproducts/:id",
+      "handler": "enpossproduct.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/enpossproducts",
+      "handler": "enpossproduct.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/enpossproducts/:id",
+      "handler": "enpossproduct.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/enpossproducts/:id",
+      "handler": "enpossproduct.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

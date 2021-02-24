@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/companystory",
+      "handler": "companystory.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/companystory",
+      "handler": "companystory.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/companystory",
+      "handler": "companystory.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/forcewidgets",
+      "handler": "forcewidgets.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/forcewidgets/count",
+      "handler": "forcewidgets.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/forcewidgets/:id",
+      "handler": "forcewidgets.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/forcewidgets",
+      "handler": "forcewidgets.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/forcewidgets/:id",
+      "handler": "forcewidgets.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/forcewidgets/:id",
+      "handler": "forcewidgets.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

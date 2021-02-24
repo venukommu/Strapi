@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homepagewidgets",
+  "info": {
+    "name": "homepagewidget",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "iconname": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "classname": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "widgetslink": {
+      "type": "string"
+    }
+  }
+}

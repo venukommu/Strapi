@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/forceinstall",
+      "handler": "forceinstall.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/forceinstall",
+      "handler": "forceinstall.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/forceinstall",
+      "handler": "forceinstall.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
