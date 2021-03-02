@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "forceinstalls",
   "info": {
-    "name": "forceinstall"
+    "name": "forceinstall",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -18,14 +19,29 @@
       "type": "string",
       "required": true
     },
-    "Beforeinstalldescription": {
-      "type": "richtext"
-    },
     "Orderinstall": {
       "type": "string"
     },
+    "Beforeinstalldescription": {
+      "type": "json"
+    },
     "Orderinstalldescription": {
-      "type": "richtext"
+      "type": "json"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Title"
     }
   }
 }

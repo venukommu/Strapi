@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/forceprinciples",
+      "handler": "forceprinciples.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/forceprinciples",
+      "handler": "forceprinciples.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/forceprinciples",
+      "handler": "forceprinciples.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

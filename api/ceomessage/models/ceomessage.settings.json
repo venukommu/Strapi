@@ -18,6 +18,34 @@
     "description": {
       "type": "richtext",
       "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle1": {
+      "type": "string"
+    },
+    "ceotitle": {
+      "type": "string"
+    },
+    "ceodescription": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "slug": {
+      "type": "uid"
     }
   }
 }

@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "forceprinciples",
+  "info": {
+    "name": "forceprinciples",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "priciplestitle": {
+      "type": "string",
+      "required": true
+    },
+    "principlesdescription": {
+      "type": "richtext",
+      "required": true
+    },
+    "principlesdata": {
+      "type": "json"
+    }
+  }
+}

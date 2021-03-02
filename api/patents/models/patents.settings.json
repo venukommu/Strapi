@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "patents",
+  "info": {
+    "name": "Patents",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "names": {
+      "type": "json"
+    }
+  }
+}

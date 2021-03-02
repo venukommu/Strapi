@@ -24,9 +24,13 @@ const {
   contacts,
   enpossproducts,
   ceomessage,
-  companystory,
+  ourstory,
   forcewidgets,
-  forceinstall
+  forceinstall,
+  timeline,
+  forceprinciples,
+  Patents,
+  Certifications
 } = require("../../data/data");
 
 const findPublicRole = async () => {
@@ -346,19 +350,19 @@ const createContent = async (files, pdfs) => {
   });
 
   const ceomessagePromises = ceomessage.map(async ceomessage => {
-    try {
-      await strapi.query("ceomessage").create(ceomessage);
-    } catch (e) {
-      console.log(e);
-    }  
+    const image = handleFiles(ceomessage)
+    const imgfiles = {
+      image
+    };
+    await promisesData(imgfiles, ceomessage, "ceomessage")
   });
 
-  const companystoryPromises = companystory.map(async companystory => {
-    try {
-      await strapi.query("companystory").create(companystory);
-    } catch (e) {
-      console.log(e);
-    }  
+  const ourstoryPromises = ourstory.map(async ourstory => {
+    const image = handleFiles(ourstory)
+    const imgfiles = {
+      image
+    };
+    await promisesData(imgfiles, ourstory, "ourstory") 
   });
 
   const forcewidgetPromises = forcewidgets.map(async forcewidgets => {
@@ -371,11 +375,47 @@ const createContent = async (files, pdfs) => {
   });
   
   const forceinstallPromises = forceinstall.map(async forceinstall => {
+    const image = handleFiles(forceinstall)
+
+    const imgfiles = {
+      image
+    };
+    await promisesData(imgfiles, forceinstall, "forceinstall")
+  });
+
+  const forceprinciplesPromises = forceprinciples.map(async forceprinciples => {
+    const image = handleFiles(forceprinciples)
+
+    const imgfiles = {
+      image
+    };
+    await promisesData(imgfiles, forceprinciples, "forceprinciples")
+  });
+
+  const timelinePromises = timeline.map(async timeline => {
     try {
-      await strapi.query("forceinstall").create(forceinstall);
+      await strapi.query("timeline").create(timeline);
     } catch (e) {
       console.log(e);
     }  
+  });
+
+  const PatentsPromises = Patents.map(async Patents => {
+    const images = await handleMultipleFiles(Patents)
+
+    const imgfiles = {
+      images
+    };
+    await promisesData(imgfiles, Patents, "Patents")  
+  });
+
+  const CertificationsPromises = Patents.map(async Certifications => {
+    const images = await handleMultipleFiles(Certifications)
+
+    const imgfiles = {
+      images
+    };
+    await promisesData(imgfiles, Certifications, "Certifications")  
   });
   
   await Promise.all(homebannerPromises);
@@ -396,9 +436,14 @@ const createContent = async (files, pdfs) => {
   await Promise.all(contactsPromises);
   await Promise.all(enpossPromises);
   await Promise.all(ceomessagePromises);
-  await Promise.all(companystoryPromises);
+  await Promise.all(ourstoryPromises);
   await Promise.all(forcewidgetPromises);
   await Promise.all(forceinstallPromises);
+  await Promise.all(forceprinciplesPromises);
+  await Promise.all(timelinePromises);
+  await Promise.all(PatentsPromises);
+  await Promise.all(CertificationsPromises);
+  
 };
 
 module.exports = async () => {

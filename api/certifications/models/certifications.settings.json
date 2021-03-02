@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "certifications",
+  "info": {
+    "name": "Certifications"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "names": {
+      "type": "json"
+    }
+  }
+}
